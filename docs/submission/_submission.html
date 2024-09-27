@@ -1,0 +1,567 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>課題提出方法 &#8212; ゼロから始めるプログラミング</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/submission/_submission';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ゼロから始めるプログラミング
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="submission.html">課題提出方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public/issues/new?title=Issue%20on%20page%20%2Fdocs/submission/_submission.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/submission/_submission.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>課題提出方法</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">課題提出の流れ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teamsから課題を提出する．</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">課題ファイルの作成方法</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>課題提出方法<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<p>「ゼロからはじめるプログラミング」では<span class="xref myst">成績評価</span>にもあるように毎週の課題提出状況と期末試験の成績から総合的に評価します．このページでは課題提出方法を説明します．</p>
+<section id="id2">
+<h2>課題提出の流れ<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<p>課題の提出は以下の手順で行います．</p>
+<ol class="arabic simple">
+<li><p>月曜日に課題ページの公開と同時に <strong>Teams</strong> の課題機能から受講者へ課題が課されます．</p></li>
+<li><p>期限内に課題ページを解いてください．</p></li>
+<li><p>解いた Jupyter Notebook (.ipynb形式)を <strong>PDF</strong> ファイル (.pdf)に変換してください．</p></li>
+<li><p>Teamsの課題提出フォームから変換したPDFファイルを提出してください．</p></li>
+</ol>
+<p>詳細は以下に続きます．</p>
+</section>
+<hr class="docutils" />
+<section id="teams">
+<h2>Teamsから課題を提出する．<a class="headerlink" href="#teams" title="Permalink to this heading">#</a></h2>
+<p>課題提出の流れ，ステップ <strong>1</strong> と <strong>4</strong> に関する説明です．</p>
+<ol class="arabic">
+<li><p>受講者は課題が作成されると <strong>一般チャンネル</strong> に以下のようなメッセージが通知されます．</p>
+<p><img alt="課題受け取り" src="../../_images/teams_1.png" /></p>
+</li>
+<li><p>通知されたメッセージの課題の表示をクリックすると以下の提出フォームが表示されます．このステップはTeamsのメニューの課題からもアクセスできます．</p>
+<p><img alt="課題フォーム" src="../../_images/teams_2.jpg" /></p>
+</li>
+<li><p>後述する作成した課題ファイル (.pdf形式) を <strong>添付</strong> をクリックし，<strong>自身のデバイス</strong> からアップロードしてください．</p>
+<p><img alt="課題のアップロード" src="../../_images/teams_3.jpg" /></p>
+</li>
+<li><p>最後に <strong>提出</strong> をクリックしてください．完了すると右上の <strong>提出しました</strong> となります．<strong>アップロードしただけでは提出とならないのでご注意ください．</strong> 提出を取り消して，新たな解答ファイルをアップロードすることも可能です．このときはステップ3の画面になります．</p>
+<p><img alt="課題の提出" src="../../_images/teams_4.jpg" /></p>
+</li>
+</ol>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>課題ファイルの作成方法<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<p>課題提出の流れ，ステップ <strong>3</strong> に関する説明です．</p>
+<p><strong>課題ファイルの注意点</strong></p>
+<ul class="simple">
+<li><p>提出ファイルは実行したJupyter Notebookをpdf化したファイルです．</p></li>
+<li><p>実行したJupyter Notebookに科目名，学籍番号，氏名を記載してください．</p></li>
+<li><p>.ipynbファイルは受け付けません．</p></li>
+</ul>
+<p>Jupyter Notebookのpdf化は以下の手順で作成してください．以下の手順はMacのGoogle Chromeの説明になります．Windowsでも見た目が異なるだけで同様の手順で作成可能です．</p>
+<ol class="arabic">
+<li><p>まず課題の作成します．演習回のページを開いてください．2通りの作成方法があります．</p>
+<ol class="arabic">
+<li><p><strong>ロケットマークからGoogle Colabを直接開く方法</strong></p>
+<p>ロケットマークをクリックしてください．演習に対応するGoogle Colabが開きます．詳細はサポートページの <a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2022-public/docs/01/introduction_and_setup.html#id6">Google Colaboratoryを使った教材の開き方</a> に記載されています．</p>
+<p><strong>注意点</strong><br />
+このとき，ノートブックを操作した結果はGoogle Drive上に保存されません． ノートブックの上側にある「ドライブをコピー」というボタンを押せば，自分のGoogle Drive上にノートブックのコピーが作成されます．課題作成を中断したい場合は，必ずコピーを作成してください</p>
+</li>
+<li><p><strong>Notebookをダウンロードする方法</strong></p>
+<p>ロケットマークのアイコンのある右端のアイコンをクリックすると演習課題の .ipynb ファイルをダウンロードできます．ダウンロードしたNotebookをGoogle Colabでアップロードすると演習に対応するGoogle Colabが利用可能な状態になります．アップロード手順は <a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2022-public/docs/01/introduction_and_setup.html#id5">ノートブックのアップロード</a> に記載されています．</p>
+</li>
+</ol>
+</li>
+<li><p>上記の手順で演習の .ipynb ファイルをGoogle Colabで開くと，Jupyter Notebookのトップに学籍番号と氏名の記入欄があります．編集して学籍番号と氏名を記入してください．</p>
+<p><img alt="" src="../../_images/pdf_1.png" /></p>
+</li>
+<li><p>解答用セルに課題を解いてください．必ずしも一つの解答用セルにプログラムを作成する必要はありません．</p>
+<p><img alt="" src="../../_images/pdf_2.png" /></p>
+</li>
+<li><p>Google Colabのファイルをクリックすると <strong>印刷</strong> の項目があります．印刷をクリックしてください．</p>
+<p><img alt="" src="../../_images/pdf_3.png" /></p>
+</li>
+<li><p>印刷をクリックすると以下のような画面が出力されるはずです．</p>
+<p><img alt="" src="../../_images/pdf_4.png" /></p>
+</li>
+<li><p>送信先をクリックすると利用可能なプリンターに加えて <strong>PDFに保存</strong> という項目があるはずなのでクリックしてください．</p>
+<p><img alt="" src="../../_images/pdf_5.png" /></p>
+<p><strong>注意</strong>
+この画面は利用しているブラウザによって異なります．上記の例はGoogle Chromeでの画面です．</p>
+<p>Microsoft Edgeを利用している受講者は以下のような印刷プレビュー画面が出力されているはずです．</p>
+<p><img alt="" src="../../_images/pdf_5_win.png" /></p>
+<p>Safariを利用している受講者は手順が異なります．印刷をクリックすると以下のような印刷プレビュー画面が出力されているはずです．プリンタではなく中央下にある <strong>PDF</strong> から <strong>PDFとして保存</strong> をクリックしてPDFを保存してください．</p>
+<p><img alt="" src="../../_images/pdf_5_safari.png" /></p>
+</li>
+<li><p>送信先が <strong>PDFに保存</strong> となっていることを確認し，右下の <strong>保存</strong> をクリックしてください．パソコンにPDFファイルが保存されるはずです．保存場所とファイル名はわかりやすいように各自設定してください．保存されたPDFファイルが以下のように正しく出力されていることを確認してください．</p>
+<p><img alt="" src="../../_images/pdf_6.png" /></p>
+<p>ステップ7はSafariを利用している受講者は必要ありません．</p>
+</li>
+<li><p>作成したPDFファイルを前述した <strong>Teamsの提出方法</strong> に従って提出してください．</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/submission"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">課題提出の流れ</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#teams">Teamsから課題を提出する．</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">課題ファイルの作成方法</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hiroaki Aizawa & Akira Furui
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2024 (CC BY 4.0).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
