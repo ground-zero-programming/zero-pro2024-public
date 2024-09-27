@@ -1,0 +1,6 @@
+.DS_Store
+_build
+.ipynb_checkpoints
+
+docs/10/output
+docs/11/output
