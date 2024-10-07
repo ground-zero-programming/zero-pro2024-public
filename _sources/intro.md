@@ -30,16 +30,16 @@
 | 教材 | ビデオ | 課題提出〆切 | 課題の解答 |
 | ---- | :----: | :----: | :----: |
 | [第1回：イントロダクションと<br>Google Colaboratoryの導入](docs/01/introduction_and_setup.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/ERki-foH6O9Fkf9b56c6FhcBKsL_b9OpOukHoupVeAKbkA) | - | - |
-| 第2回：変数とデータ型（講義） | 準備中 | - | - |
-| 第3回：変数とデータ型（演習） | - | 10/17 | 10/18公開 |
+| [第2回：変数（講義）](docs/02/variables_and_data_types.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/Ebw0RCmXjpFArr6WbBJTcNoB40vgANB9sdyK1E9A2OJqEg) | - | - |
+| [第3回：変数（演習）](docs/03/exercise_variables_and_data_types.ipynb) | - | 10/17 | 10/18公開 |
 | 第4回：条件分岐（講義） | 準備中 | - | - |
 | 第5回：条件分岐（演習） | - | 10/24 | 10/25公開 |
 | 第6回：繰り返し処理（講義） | 準備中 | - | - |
 | 第7回：繰り返し処理（演習）  | - | 10/31 | 11/1公開 |
-| 第8回：関数とスコープ（講義） | 準備中 | - | - |
-| 第9回：関数とスコープ（演習） |- | 11/7 | 11/8公開 |
-| 第10回：アプリケーションの作成（講義） | 準備中 | - | - |
-| 第11回：アプリケーションの作成（演習）  | - | 11/14 | 11/15公開 |
+| 第8回：関数（講義） | 準備中 | - | - |
+| 第9回：関数（演習） |- | 11/7 | 11/8公開 |
+| 第10回：クラス（講義） | 準備中 | - | - |
+| 第11回：クラス（演習）  | - | 11/14 | 11/15公開 |
 | 第12回：データ分析入門（講義） | 準備中 | - | - |
 | 第13回：データ分析入門（演習）  | - | 11/28 | 11/29公開 |
 | 第14回：機械学習入門（講義） | 準備中 | - | - |
