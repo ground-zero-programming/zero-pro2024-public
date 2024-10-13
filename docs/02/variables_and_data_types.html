@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>第2回：変数（講義） &#8212; ゼロから始めるプログラミング</title>
   
@@ -15,53 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
-  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/02/variables_and_data_types';</script>
@@ -78,28 +73,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
-
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,12 +111,20 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
-    </nav>
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
   
+
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
+      
+      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -141,9 +139,13 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
+  
+    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -153,12 +155,23 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,7 +207,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -203,14 +216,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -235,14 +248,14 @@ const thebe_selector_output = ".output, .cell_output"
       
       <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/02/variables_and_data_types.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch onColab"
+   title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img src="../../_static/images/logo_colab.png">
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -363,26 +376,28 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -494,13 +509,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article" role="main">
+                <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第2回：変数（講義）<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
+<h1>第2回：変数（講義）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
 <p>担当：相澤宏旭</p>
 <section id="id2">
-<h2>内容<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<h2>内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <p>第2回 変数では，プログラミングの基礎である変数の概念と変数の種類に応じたデータ型について学ぶ．変数はPythonだけでなくC言語やJava言語など他のプログラミング言語にもわたる普遍的な仕組みである．変数の理解はデータの保存やデータ同士の演算だけでなく，効率的にデータを扱うために重要である．具体的には，以下の項目について理解し，変数を使いこなせることが本講義の目標である．</p>
 <ul class="simple">
 <li><p>データが格納された変数の概念を理解する．</p></li>
@@ -510,12 +525,12 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>変数とは？<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
+<h2>変数とは？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
 <p>我々は <strong>プログラミング言語</strong> を介してコンピュータに任意の <strong>演算</strong> を指示することができる．演算とは四則演算や文字列処理などの小さなものであるが，これらの演算を組み合わせることで様々なソフトウェアを作成することができる．講義科目名にもある <strong>プログラミング</strong> とはプログラミング言語を介して何らかの演算をさせることである．プログラミングの第一歩として，第2回目の講義では，演算を実行するために必要なデータを取り扱う <strong>変数（Variable）</strong> について学ぶ．</p>
 <p>厳密には異なるが，ここでは変数は中学の数学で学んだ方程式 <span class="math notranslate nohighlight">\(y=2x+1\)</span> における変数 <span class="math notranslate nohighlight">\(x,y\)</span> と同じようなものとしてイメージされたい．式上では変数に具体的な数値は格納されていないが，我々は <span class="math notranslate nohighlight">\(x=10\)</span> のように変数 <span class="math notranslate nohighlight">\(x\)</span> に具体的な値 <span class="math notranslate nohighlight">\(10\)</span> を代入したときの <span class="math notranslate nohighlight">\(y\)</span> の値を計算できる．この処理をコンピュータで実行することをイメージされたい．必要な情報は演算 <span class="math notranslate nohighlight">\(y=2x+1\)</span> と変数 <span class="math notranslate nohighlight">\(x,y\)</span> の定義，そして変数への代入 <span class="math notranslate nohighlight">\(x=10\)</span> である．では，この情報と処理をコンピュータにどのように演算として指示をすればいいだろうか？</p>
 <p>以降，Pythonを使ってこの演算を実行する．</p>
 <section id="id4">
-<h3>変数に値を代入する<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<h3>変数に値を代入する<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
 <p>始めに，式を定義する前に，変数 <span class="math notranslate nohighlight">\(x\)</span> に値 <span class="math notranslate nohighlight">\(10\)</span> を代入する処理を学ぶ．この処理には変数 <span class="math notranslate nohighlight">\(x\)</span> の定義と値 <span class="math notranslate nohighlight">\(10\)</span> の代入という処理が含まれる．</p>
 <p>プログラミングにおける変数と代入を理解するためにはコンピュータ上でのデータの管理方法のイメージを掴む必要がある．詳細は省略するが，コンピュータはデータ（ここでは値 <span class="math notranslate nohighlight">\(10\)</span>）を <strong>メモリ</strong> 上で管理している．メモリは図に示すようにコンピュータ上の記憶領域である．また，記憶領域上の位置は <strong>アドレス</strong> とも呼ばれる．コンピュータはメモリに記録された値と演算時に参照するメモリ位置を使って変数を管理している．</p>
 <p><img alt="" src="../../_images/var.png" /></p>
@@ -536,7 +551,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>代入した値を参照する<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
+<h3>代入した値を参照する<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
 <p><img alt="" src="../../_images/refer.png" /></p>
 <p>続いて，上図のように代入した値を変数名を指定することで出力（= <strong>参照</strong> ）する．上記のセルで代入した<code class="docutils literal notranslate"><span class="pre">10</span></code>が出力されれば正しく代入し，管理できていることが確認できる．Pythonでは <code class="docutils literal notranslate"><span class="pre">print(変数名)</span></code> とすることで変数名に含まれるデータを出力できる．</p>
 <div class="cell docutils container">
@@ -566,7 +581,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>式を計算する<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
+<h3>式を計算する<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
 <p>前述した方程式 <span class="math notranslate nohighlight">\(y=2x+1\)</span> の右辺を変数 <span class="math notranslate nohighlight">\(x=10\)</span> として計算する．詳細は後述するが，Pythonでは数値同士の四則演算がサポートされている．足し算は <code class="docutils literal notranslate"><span class="pre">+</span></code> 演算子，掛け算は <code class="docutils literal notranslate"><span class="pre">*</span></code> 演算子で実行することができる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -603,7 +618,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>代入した値を変更する<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
+<h3>代入した値を変更する<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
 <p><img alt="" src="../../_images/reassign.png" /></p>
 <p>では，最後に，変数 <span class="math notranslate nohighlight">\(x\)</span> の中身を変更することを試みる．上記の代入手順を再度行うことで変数の中身を新たなデータで更新できる．</p>
 <div class="cell docutils container">
@@ -647,10 +662,10 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>変数の型と名前<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
+<h2>変数の型と名前<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
 <p>先ほどの例では，数値を扱う変数を定義して演算を行った．Pythonでは数値だけでなく文字列，論理値，集合データなど様々なデータ（=変数）を変数として扱うことができる．このようなデータの種類を <strong>データ型</strong> （または単に，<strong>型</strong>）と呼ぶ．Pythonによってサポートされる変数は多岐にわたり，実は，変数自身も実装することができる．本講義で取り上げる代表的な変数を紹介する前に変数の種類について説明する．</p>
 <p>以下に，発展内容も含めるが本講義で扱う基本的なデータ型をまとめる．</p>
-<table class="table">
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>データ型の名前</p></th>
 <th class="head"><p>型</p></th>
@@ -692,12 +707,13 @@ document.write(`
 </tr>
 </tbody>
 </table>
+</div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>発展的な内容であるが，本来ならばデータの種類に応じて変数の定義を行う必要がある．Pythonは<code class="docutils literal notranslate"><span class="pre">=</span></code>によって代入する値に応じて <strong>自動的に</strong> 変数（=メモリ）を確保する仕組みを持つ．これは <strong>動的型付け</strong> と呼ばれる仕組みである．データの種類に応じて私たちが型を定義することなく変数の定義ができる利点を持つが，大規模なプログラムを作成したり，変数が増えたとき，意図しないデータ同士の演算をしてしまうことがある．この意図しない処理を <strong>バグ</strong> と言う．代入されるデータ型を把握しておくことは，バグを生じさせないためにも重要である．</p>
 </div>
 <section id="id9">
-<h3>変数の型の確認方法<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
+<h3>変数の型の確認方法<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
 <p>変数の型を調べるときは以下で確認できる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">変数名</span><span class="p">)</span>
 </pre></div>
@@ -722,7 +738,7 @@ document.write(`
 </div>
 </section>
 <section id="id10">
-<h3>変数名<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
+<h3>変数名<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
 <p>データ型に加えて変数の名前にも注意が必要である．変数名には小文字の英字（<code class="docutils literal notranslate"><span class="pre">a-z</span></code>），大文字の英字（<code class="docutils literal notranslate"><span class="pre">A-Z</span></code>），数字（<code class="docutils literal notranslate"><span class="pre">0-9</span></code>），アンダースコア（<code class="docutils literal notranslate"><span class="pre">_</span></code>）を利用することができるが，エラーが発生するもしくはバグを生じさせる変数名がある．具体的に，変数名の先頭が数字の場合や以下に示す変数名に使えない文字列で変数を定義した場合である．何らかのエラーが生じた際には変数の名前を確認されたい．</p>
 <p><strong>変数名に使えない文字列</strong></p>
 <p>以下の単語は，<strong>予約語</strong> と呼ばれるプログラム上で意味をなす役割を持った単語のため変数には利用できない．</p>
@@ -740,14 +756,14 @@ document.write(`
 </section>
 </section>
 <section id="id11">
-<h2>数値データ<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
+<h2>数値データ<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
 <p><strong>数値データ型</strong> は整数（<span class="math notranslate nohighlight">\(1\)</span>, <span class="math notranslate nohighlight">\(-10\)</span>,…），浮動小数点数（<span class="math notranslate nohighlight">\(3.14\)</span>, <span class="math notranslate nohighlight">\(-0.01\)</span>,…），複素数（<span class="math notranslate nohighlight">\(2+3i\)</span>，<span class="math notranslate nohighlight">\(5-2i\)</span>,…）といった数値を扱う際に定義される変数である．前述したようにPythonでは代入時の数値に応じて動的に変数の型が定義される．Pythonではスカラーだけでなくベクトルや行列もサポートされている．演算のために<a class="reference external" href="https://numpy.org">Numpy</a>と呼ばれる数値計算ライブラリが一般的に利用されるが，詳細は第10回以降のPythonの応用場面で紹介する．ここでは，代表的な数値データ型である<code class="docutils literal notranslate"><span class="pre">int</span></code>型と<code class="docutils literal notranslate"><span class="pre">float</span></code>型を紹介する．これらはそれぞれ整数値と浮動小数点数を扱うデータ型である．</p>
 <p><img alt="" src="../../_images/num.png" /></p>
 <p>発展的な内容であるが複素数（<span class="math notranslate nohighlight">\(2+3i\)</span>，<span class="math notranslate nohighlight">\(5-2i\)</span>,…）は<code class="docutils literal notranslate"><span class="pre">complex</span></code>型として定義される．</p>
 <section id="id12">
-<h3>代表的な数値データ型<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
+<h3>代表的な数値データ型<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
 <section id="int">
-<h4>int型<a class="headerlink" href="#int" title="Permalink to this heading">#</a></h4>
+<h4>int型<a class="headerlink" href="#int" title="Link to this heading">#</a></h4>
 <p>整数を扱う型を<code class="docutils literal notranslate"><span class="pre">int</span></code>型という．以下に<code class="docutils literal notranslate"><span class="pre">int</span></code>型の変数の代入例を示す．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -812,7 +828,7 @@ document.write(`
 </div>
 </section>
 <section id="float">
-<h4>float型<a class="headerlink" href="#float" title="Permalink to this heading">#</a></h4>
+<h4>float型<a class="headerlink" href="#float" title="Link to this heading">#</a></h4>
 <p>小数点を扱う型を<code class="docutils literal notranslate"><span class="pre">float</span></code>型という．以下に<code class="docutils literal notranslate"><span class="pre">float</span></code>型の変数の代入例を示す．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -869,7 +885,7 @@ document.write(`
 </section>
 </section>
 <section id="id13">
-<h3>数値データの演算<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
+<h3>数値データの演算<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
 <p>数値データの定義の次は，数値データ同士の四則演算を紹介する．Pythonは <code class="docutils literal notranslate"><span class="pre">int</span></code> 型や <code class="docutils literal notranslate"><span class="pre">float</span></code> 型といった数値データに対して一般的な四則演算がサポートされており，1. 導入で行った数値データの演算を変数データに対しても同様に行うことができる．</p>
 <p>数値データ型の変数 <code class="docutils literal notranslate"><span class="pre">a</span></code> と <code class="docutils literal notranslate"><span class="pre">b</span></code> を作成し，足し算 <code class="docutils literal notranslate"><span class="pre">+</span></code> ，引き算 <code class="docutils literal notranslate"><span class="pre">-</span></code> ，掛け算 <code class="docutils literal notranslate"><span class="pre">*</span></code> ，割り算 <code class="docutils literal notranslate"><span class="pre">/</span></code> ，切り捨て <code class="docutils literal notranslate"><span class="pre">//</span></code> ，冪乗 <code class="docutils literal notranslate"><span class="pre">**</span></code> ，余剰 <code class="docutils literal notranslate"><span class="pre">%</span></code> の計算例を確認する．</p>
 <div class="cell docutils container">
@@ -1011,7 +1027,7 @@ document.write(`
 </section>
 </section>
 <section id="id14">
-<h2>文字列<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h2>
+<h2>文字列<a class="headerlink" href="#id14" title="Link to this heading">#</a></h2>
 <p>プログラミングを活用する場面では計算結果やエラー文を表示する際に文章を出力することが多々ある．ここでは，<code class="docutils literal notranslate"><span class="pre">A</span></code>，<code class="docutils literal notranslate"><span class="pre">Hello</span></code>，<code class="docutils literal notranslate"><span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">pen.</span></code>など文字，単語，文章をプログラミングで扱うことを考える．プログラミングでは，単語や文章など複数の <strong>文字</strong> が連なったものを <strong>文字列</strong> と呼び，PythonではPythonでは文字列は<code class="docutils literal notranslate"><span class="pre">str</span></code>型として扱われる．<code class="docutils literal notranslate"><span class="pre">str</span></code>型の変数の定義方法は，シングルクォーテーション <code class="docutils literal notranslate"><span class="pre">'</span></code> もしくはダブルクォーテーション <code class="docutils literal notranslate"><span class="pre">&quot;</span></code> で囲んだ文字または文字列を数値データと同様に代入すれば良い．</p>
 <p><img alt="" src="../../_images/str.png" /></p>
 <p>文字の場合は数値データと同様に一つの変数に文字データが格納されているとイメージすれば良い．一方で，文字列に関しては文字が格納された変数が複数個連なったデータをイメージされたい．これを上図に示す．<code class="docutils literal notranslate"><span class="pre">Hello</span></code>という文字列は単一の変数<code class="docutils literal notranslate"><span class="pre">s</span></code>に格納されているが各文字<code class="docutils literal notranslate"><span class="pre">H</span></code>，<code class="docutils literal notranslate"><span class="pre">e</span></code>，<code class="docutils literal notranslate"><span class="pre">l</span></code>，<code class="docutils literal notranslate"><span class="pre">l</span></code>，<code class="docutils literal notranslate"><span class="pre">o</span></code>はそれぞれ異なるメモリ位置に保存されていることに注意されたい．</p>
@@ -1098,10 +1114,10 @@ lo
 </div>
 </div>
 <section id="id15">
-<h3>文字列の演算<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
+<h3>文字列の演算<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">str</span></code>型で定義される文字列について文字列同士の演算やサポートされている関数を紹介する．</p>
 <section id="id16">
-<h4>文字列の長さの取得<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h4>
+<h4>文字列の長さの取得<a class="headerlink" href="#id16" title="Link to this heading">#</a></h4>
 <p>代入した文字列の文字数は<code class="docutils literal notranslate"><span class="pre">len</span></code>関数で取得できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1145,7 +1161,7 @@ lo
 </div>
 </section>
 <section id="id17">
-<h4>文字列変数に対する足し算と掛け算<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h4>
+<h4>文字列変数に対する足し算と掛け算<a class="headerlink" href="#id17" title="Link to this heading">#</a></h4>
 <p>複数の文字列の結合<code class="docutils literal notranslate"><span class="pre">+</span></code>や文字列の繰り返し<code class="docutils literal notranslate"><span class="pre">*</span></code>処理がサポートされている．同じ演算子であっても文字列と数値データでは処理が異なるため，データ型には常に注意されたい．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1177,7 +1193,7 @@ lo
 </div>
 </section>
 <section id="id18">
-<h4>文字列中の文字を参照する<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h4>
+<h4>文字列中の文字を参照する<a class="headerlink" href="#id18" title="Link to this heading">#</a></h4>
 <p><img alt="" src="../../_images/slice.png" /></p>
 <p>続いて，定義した文字列中の文字を参照する方法を紹介する．例えば，<code class="docutils literal notranslate"><span class="pre">Hello</span></code> から最後の文字 <code class="docutils literal notranslate"><span class="pre">o</span></code> を出力する場面である．このような場面では要素の <strong>インデックス（index）</strong> を指定することで参照できる．前述したように文字列は文字が格納された変数の集まりであり，インデックスは文字列の各変数の番号を示していることを上図からイメージされたい．参照したい文字列の文字の先頭からの数がインデックスである．インデックスが計算できたら以下のように指定することで参照できる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">文字列</span><span class="p">[</span><span class="n">インデックス</span><span class="p">]</span>
@@ -1238,7 +1254,7 @@ lo
 </div>
 </section>
 <section id="id19">
-<h4>文字列中の部分文字列を参照する<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h4>
+<h4>文字列中の部分文字列を参照する<a class="headerlink" href="#id19" title="Link to this heading">#</a></h4>
 <p><img alt="" src="../../_images/slice_start_end.png" /></p>
 <p>前述のように文字列から文字を抽出する際はインデックスを指定すれば良い．ここでは，文字列から部分文字列を参照することを考える．例えば，上図のように文字列<code class="docutils literal notranslate"><span class="pre">Hello</span></code>から部分文字列<code class="docutils literal notranslate"><span class="pre">ell</span></code>を抽出する場面である．このような処理を実現するためには，参照したい部分文字列の開始インデックスと終了インデックスをコロン<code class="docutils literal notranslate"><span class="pre">:</span></code>を用いて以下のように指定すれば良い．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">文字列</span><span class="p">[</span><span class="n">開始インデックス</span><span class="p">:</span><span class="n">終了インデックス</span><span class="p">]</span>
@@ -1385,7 +1401,7 @@ lo
 </section>
 </section>
 <section id="id20">
-<h2>リスト<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h2>
+<h2>リスト<a class="headerlink" href="#id20" title="Link to this heading">#</a></h2>
 <p><img alt="" src="../../_images/list.png" /></p>
 <p><strong>リスト</strong> は複数のデータを扱いたいときに利用されるデータ型である．例えば，3日間の平均気温をプログラム上で定義したいとき3日分の3つの変数を定義することなく，1つのリストで管理することができる．リストは以下のように <code class="docutils literal notranslate"><span class="pre">[]</span></code> の中に，値（要素とも呼ばれる）をカンマ <code class="docutils literal notranslate"><span class="pre">,</span></code> 区切りで並べることで定義できる．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">リスト</span> <span class="o">=</span> <span class="p">[</span><span class="n">要素1</span><span class="p">,</span> <span class="n">要素2</span><span class="p">,</span> <span class="n">要素3</span><span class="p">,</span><span class="o">...</span><span class="p">]</span>
@@ -1474,10 +1490,10 @@ lo
 </div>
 </div>
 <section id="id21">
-<h3>リストの演算<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
+<h3>リストの演算<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
 <p>リスト型に定義されているインデキシングとスライシングによる参照方法，リスト同士の演算，値の操作を紹介する．これらの方法は文字列と同じである．</p>
 <section id="id22">
-<h4>リストのインデキシング<a class="headerlink" href="#id22" title="Permalink to this heading">#</a></h4>
+<h4>リストのインデキシング<a class="headerlink" href="#id22" title="Link to this heading">#</a></h4>
 <p><img alt="" src="../../_images/list_index.png" /></p>
 <p>リストには<code class="docutils literal notranslate"><span class="pre">str</span></code>型と同様にインデキシングがサポートされる．
 そのためリストの要素へは以下で参照できる．</p>
@@ -1531,7 +1547,7 @@ lo
 </div>
 </section>
 <section id="id23">
-<h4>リストのスライシング<a class="headerlink" href="#id23" title="Permalink to this heading">#</a></h4>
+<h4>リストのスライシング<a class="headerlink" href="#id23" title="Link to this heading">#</a></h4>
 <p>リストにはスライシングもまたサポートされている．<code class="docutils literal notranslate"><span class="pre">str</span></code>型と同様に開始インデックスと終了インデックスを指定することで部分要素を参照できる．
 参照方法は以下である．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">リスト</span><span class="p">[</span><span class="n">開始インデックス</span><span class="p">:</span><span class="n">終了インデックス</span><span class="p">]</span>
@@ -1604,7 +1620,7 @@ lo
 </div>
 </section>
 <section id="id24">
-<h4>要素の追加<a class="headerlink" href="#id24" title="Permalink to this heading">#</a></h4>
+<h4>要素の追加<a class="headerlink" href="#id24" title="Link to this heading">#</a></h4>
 <p>リストへ新たな要素を追加する際は<code class="docutils literal notranslate"><span class="pre">リスト.append(追加する値)</span></code>を呼び出す．追加された値は末尾に挿入される．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1633,7 +1649,7 @@ lo
 </div>
 </section>
 <section id="id25">
-<h4>要素の削除<a class="headerlink" href="#id25" title="Permalink to this heading">#</a></h4>
+<h4>要素の削除<a class="headerlink" href="#id25" title="Link to this heading">#</a></h4>
 <p>要素の削除は<code class="docutils literal notranslate"><span class="pre">リスト.remove(削除する値)</span></code>で行う．ただし，最初にヒットした値を持つ要素が削除されることに注意されたい．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1650,7 +1666,7 @@ lo
 </div>
 </section>
 <section id="id26">
-<h4>要素の挿入<a class="headerlink" href="#id26" title="Permalink to this heading">#</a></h4>
+<h4>要素の挿入<a class="headerlink" href="#id26" title="Link to this heading">#</a></h4>
 <p>値を挿入したい位置のインデックスを指定して<code class="docutils literal notranslate"><span class="pre">リスト.insert(インデックス,</span> <span class="pre">値)</span></code>と実行することで任意の位置に値を挿入できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1667,7 +1683,7 @@ lo
 </div>
 </section>
 <section id="id27">
-<h4>リストの連結<a class="headerlink" href="#id27" title="Permalink to this heading">#</a></h4>
+<h4>リストの連結<a class="headerlink" href="#id27" title="Link to this heading">#</a></h4>
 <p>二つのリストを連結したいとき，<code class="docutils literal notranslate"><span class="pre">+</span></code>演算子を利用して以下のように実行する．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">リスト1</span> <span class="o">+</span> <span class="n">リスト2</span>
 </pre></div>
@@ -1774,10 +1790,10 @@ lo
 </section>
 </section>
 <section id="print">
-<h2>print文<a class="headerlink" href="#print" title="Permalink to this heading">#</a></h2>
+<h2>print文<a class="headerlink" href="#print" title="Link to this heading">#</a></h2>
 <p>第1回の講義で変数の中身を参照する<code class="docutils literal notranslate"><span class="pre">print</span></code>文について学んだ．ここではより直感的に変数を出力できる<code class="docutils literal notranslate"><span class="pre">f-string</span></code>記法について紹介する．例えば，<code class="docutils literal notranslate"><span class="pre">変数xの値は...です．</span></code>と文字を含めて<code class="docutils literal notranslate"><span class="pre">print</span></code>で出力したいとする．このとき，Pythonでは次の方法で出力できる．</p>
 <section id="id28">
-<h3>文字連結によるprint出力<a class="headerlink" href="#id28" title="Permalink to this heading">#</a></h3>
+<h3>文字連結によるprint出力<a class="headerlink" href="#id28" title="Link to this heading">#</a></h3>
 <p>文字列で学んだように，変数が文字列型の場合，<code class="docutils literal notranslate"><span class="pre">+</span></code>演算子で文字列を連結できる．連結した文字列を<code class="docutils literal notranslate"><span class="pre">print</span></code>出力することで文字列と変数を同時に出力できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1794,7 +1810,7 @@ lo
 </div>
 </section>
 <section id="id29">
-<h3>カンマ（,）によるprint出力<a class="headerlink" href="#id29" title="Permalink to this heading">#</a></h3>
+<h3>カンマ（,）によるprint出力<a class="headerlink" href="#id29" title="Link to this heading">#</a></h3>
 <p>pythonでは以下のようにカンマ <strong>,</strong> で区切ることで複数の変数を同時に出力できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1810,7 +1826,7 @@ lo
 </div>
 </section>
 <section id="formatprint">
-<h3>format表記によるprint出力<a class="headerlink" href="#formatprint" title="Permalink to this heading">#</a></h3>
+<h3>format表記によるprint出力<a class="headerlink" href="#formatprint" title="Link to this heading">#</a></h3>
 <p>文字列内に<code class="docutils literal notranslate"><span class="pre">{}</span></code>で示される位置に<code class="docutils literal notranslate"><span class="pre">.format(変数)</span></code>を利用して値を文字列に埋め込むことでも出力できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1826,7 +1842,7 @@ lo
 </div>
 </section>
 <section id="f-stringprint">
-<h3>f-string表記によるprint出力<a class="headerlink" href="#f-stringprint" title="Permalink to this heading">#</a></h3>
+<h3>f-string表記によるprint出力<a class="headerlink" href="#f-stringprint" title="Link to this heading">#</a></h3>
 <p>変数を含んだ文字列を出力する際に，<code class="docutils literal notranslate"><span class="pre">f&quot;文字列{変数}&quot;</span></code>として記載することで<code class="docutils literal notranslate"><span class="pre">format</span></code>を利用せずに変数を埋め込むことができる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1845,7 +1861,7 @@ lo
 </section>
 <hr class="docutils" />
 <section id="id30">
-<h2>【発展】変数のアドレス<a class="headerlink" href="#id30" title="Permalink to this heading">#</a></h2>
+<h2>【発展】変数のアドレス<a class="headerlink" href="#id30" title="Link to this heading">#</a></h2>
 <p>PythonではC言語と異なり動的にメモリを確保する仕組みが提供されているため，メモリの確保やメモリ上の位置はユーザには秘匿されている．しかしながら，内部では前述したように変数はメモリ上に格納され，演算時はメモリのアドレスに基づいて参照される．このときのメモリのアドレスは<code class="docutils literal notranslate"><span class="pre">id</span></code>関数を利用することで取得できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1855,14 +1871,14 @@ lo
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4295666256
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4379537320
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="id31">
-<h2>【発展】タプル<a class="headerlink" href="#id31" title="Permalink to this heading">#</a></h2>
+<h2>【発展】タプル<a class="headerlink" href="#id31" title="Link to this heading">#</a></h2>
 <p>リストと似たデータ型に<strong>タプル</strong>がある．タプルはリストと異なり後から値を変更することができない．そのため，意図せず書き換えることを防ぐためにタプルが利用される．タプルはカンマ区切りの値の集合を<code class="docutils literal notranslate"><span class="pre">()</span></code>で囲うことで定義できる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">タプル</span> <span class="o">=</span> <span class="p">(</span><span class="n">要素1</span><span class="p">,</span> <span class="n">要素2</span><span class="p">,</span> <span class="n">要素3</span><span class="p">,</span><span class="o">...</span><span class="p">)</span>
 </pre></div>
@@ -1945,7 +1961,7 @@ lo
 </div>
 </section>
 <section id="id32">
-<h2>【発展】辞書<a class="headerlink" href="#id32" title="Permalink to this heading">#</a></h2>
+<h2>【発展】辞書<a class="headerlink" href="#id32" title="Link to this heading">#</a></h2>
 <p><img alt="" src="../../_images/dict.png" /></p>
 <p><strong>辞書</strong>は<strong>キー</strong>を使って複数の値を管理するために利用されるデータ型（<code class="docutils literal notranslate"><span class="pre">dict</span></code>）である．辞書は以下のようにキーから値を参照できる．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">辞書</span><span class="p">[</span><span class="n">キー</span><span class="p">]</span>
@@ -1994,9 +2010,9 @@ lo
 </div>
 </div>
 <section id="id33">
-<h3>辞書の演算<a class="headerlink" href="#id33" title="Permalink to this heading">#</a></h3>
+<h3>辞書の演算<a class="headerlink" href="#id33" title="Link to this heading">#</a></h3>
 <section id="id34">
-<h4>値の取得<a class="headerlink" href="#id34" title="Permalink to this heading">#</a></h4>
+<h4>値の取得<a class="headerlink" href="#id34" title="Link to this heading">#</a></h4>
 <p>キーワードよって参照される辞書に格納された全ての値は<code class="docutils literal notranslate"><span class="pre">辞書.values()</span></code>で取得できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2023,7 +2039,7 @@ lo
 </div>
 </section>
 <section id="id35">
-<h4>キーの取得<a class="headerlink" href="#id35" title="Permalink to this heading">#</a></h4>
+<h4>キーの取得<a class="headerlink" href="#id35" title="Link to this heading">#</a></h4>
 <p>値を参照するためのキーワードは<code class="docutils literal notranslate"><span class="pre">辞書.keys()</span></code>で取得できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2039,7 +2055,7 @@ lo
 </div>
 </section>
 <section id="id36">
-<h4>値とキーの取得<a class="headerlink" href="#id36" title="Permalink to this heading">#</a></h4>
+<h4>値とキーの取得<a class="headerlink" href="#id36" title="Link to this heading">#</a></h4>
 <p>キーワードと値を同時に取得したいときは<code class="docutils literal notranslate"><span class="pre">辞書.items()</span></code>を利用する．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2059,7 +2075,7 @@ lo
 </div>
 </section>
 <section id="id37">
-<h4>要素の追加<a class="headerlink" href="#id37" title="Permalink to this heading">#</a></h4>
+<h4>要素の追加<a class="headerlink" href="#id37" title="Link to this heading">#</a></h4>
 <p>辞書に新たな要素を加えるときは<code class="docutils literal notranslate"><span class="pre">辞書[新しいキーワード]=新しい値</span></code>とする．このとき既に定義済みのキーワードを指定すると値が更新されるので注意されたい．前述の<code class="docutils literal notranslate"><span class="pre">keys()</span></code>関数で定義済みのキーワードの管理をすると意図しない更新を避けることができる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2082,7 +2098,7 @@ lo
 </div>
 </section>
 <section id="id38">
-<h4>辞書の追加<a class="headerlink" href="#id38" title="Permalink to this heading">#</a></h4>
+<h4>辞書の追加<a class="headerlink" href="#id38" title="Link to this heading">#</a></h4>
 <p>辞書に別の辞書を追加するためには<code class="docutils literal notranslate"><span class="pre">辞書.update(追加したい辞書)</span></code>とする．重複するキーが含まれているときは追加側の辞書の値が優先される．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2120,7 +2136,7 @@ lo
 </section>
 </section>
 <section id="id39">
-<h2>【発展】論理値<a class="headerlink" href="#id39" title="Permalink to this heading">#</a></h2>
+<h2>【発展】論理値<a class="headerlink" href="#id39" title="Link to this heading">#</a></h2>
 <p>プログラムである条件を満たしていることを<code class="docutils literal notranslate"><span class="pre">True</span></code>，満たしていないことを<code class="docutils literal notranslate"><span class="pre">False</span></code>といい，第4回の講義で行う<strong>条件分岐</strong>で必要な型となる．詳細は第4回で説明するがここでは簡単に論理値とは何か？を紹介したい．</p>
 <p>例えば，変数<code class="docutils literal notranslate"><span class="pre">x</span></code>の中身の数値（<code class="docutils literal notranslate"><span class="pre">int</span></code>型）が<code class="docutils literal notranslate"><span class="pre">0</span></code>より大きい場合，処理Aを行うプログラムを書きたいとする．このとき，条件は <code class="docutils literal notranslate"><span class="pre">x&gt;0</span></code>であり，変数<code class="docutils literal notranslate"><span class="pre">x</span></code>の値がこの条件を満たすとき，<code class="docutils literal notranslate"><span class="pre">True</span></code>，満たさないとき，<code class="docutils literal notranslate"><span class="pre">False</span></code>となる．<code class="docutils literal notranslate"><span class="pre">True</span></code>と<code class="docutils literal notranslate"><span class="pre">False</span></code>も論理値（または真偽値）と呼ばれる<code class="docutils literal notranslate"><span class="pre">bool</span></code>型である．</p>
 <div class="cell docutils container">
@@ -2179,7 +2195,7 @@ lo
 </div>
 </section>
 <section id="id40">
-<h2>【発展】代入演算子<a class="headerlink" href="#id40" title="Permalink to this heading">#</a></h2>
+<h2>【発展】代入演算子<a class="headerlink" href="#id40" title="Link to this heading">#</a></h2>
 <p>値を変数に代入する操作は上記の<code class="docutils literal notranslate"><span class="pre">var</span> <span class="pre">=</span> <span class="pre">10</span></code>以外も提供されている．例えば，変数1（<code class="docutils literal notranslate"><span class="pre">var1</span></code>）と変数2（<code class="docutils literal notranslate"><span class="pre">var2</span></code>）を足して新たな変数（<code class="docutils literal notranslate"><span class="pre">var3</span></code>）を定義できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2198,6 +2214,9 @@ lo
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -2229,10 +2248,10 @@ lo
 </div>
 </section>
 <section id="id41">
-<h2>【発展】データ型の変換<a class="headerlink" href="#id41" title="Permalink to this heading">#</a></h2>
+<h2>【発展】データ型の変換<a class="headerlink" href="#id41" title="Link to this heading">#</a></h2>
 <p>Pythonでは動的に確保したデータ型を任意のデータ型へ変更することができる．このような変換を<strong>キャスト</strong>と呼ぶ．数値データに対して文字列の繰り返し処理<code class="docutils literal notranslate"><span class="pre">*</span></code>を適用する際など便利な枠組みである．しかしながら，文字データの例で確認したように出力が数値であってもデータ型は数値データ型であるとは限らない．また，文字データと数値データで同一の演算子であっても同一の処理をするとは限らない．このようなデータ型と演算子の定義に応じた処理の違いはバグの温床となりうるため，プログラムを作成する際はデータ型の確認（<code class="docutils literal notranslate"><span class="pre">type()</span></code>関数）を心がけたい．以降，主要なデータ型についてデータ型の変換が必要な場面とその変換方法を紹介する．</p>
 <section id="intfloat-floatint">
-<h3><code class="docutils literal notranslate"><span class="pre">int</span></code>型から<code class="docutils literal notranslate"><span class="pre">float</span></code>型へ，<code class="docutils literal notranslate"><span class="pre">float</span></code>型から<code class="docutils literal notranslate"><span class="pre">int</span></code>型への変換<a class="headerlink" href="#intfloat-floatint" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">int</span></code>型から<code class="docutils literal notranslate"><span class="pre">float</span></code>型へ，<code class="docutils literal notranslate"><span class="pre">float</span></code>型から<code class="docutils literal notranslate"><span class="pre">int</span></code>型への変換<a class="headerlink" href="#intfloat-floatint" title="Link to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">int</span></code>型から<code class="docutils literal notranslate"><span class="pre">float</span></code>型への変換は<code class="docutils literal notranslate"><span class="pre">float()</span></code>関数を，<code class="docutils literal notranslate"><span class="pre">float</span></code>型から<code class="docutils literal notranslate"><span class="pre">int</span></code>型への変換は<code class="docutils literal notranslate"><span class="pre">int()</span></code>関数を利用することで行うことができる．ただし，<code class="docutils literal notranslate"><span class="pre">int</span></code>型への変換は小数点以下が切り捨てられることに注意されたい．以下に変換例を示す．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2296,9 +2315,9 @@ lo
 </div>
 </section>
 <section id="strint-intstr">
-<h3><code class="docutils literal notranslate"><span class="pre">str</span></code>型から<code class="docutils literal notranslate"><span class="pre">int</span></code>型へ，<code class="docutils literal notranslate"><span class="pre">int</span></code>型から<code class="docutils literal notranslate"><span class="pre">str</span></code>型への変換<a class="headerlink" href="#strint-intstr" title="Permalink to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">str</span></code>型から<code class="docutils literal notranslate"><span class="pre">int</span></code>型へ，<code class="docutils literal notranslate"><span class="pre">int</span></code>型から<code class="docutils literal notranslate"><span class="pre">str</span></code>型への変換<a class="headerlink" href="#strint-intstr" title="Link to this heading">#</a></h3>
 <section id="id42">
-<h4>意図した例<a class="headerlink" href="#id42" title="Permalink to this heading">#</a></h4>
+<h4>意図した例<a class="headerlink" href="#id42" title="Link to this heading">#</a></h4>
 <p>数値<span class="math notranslate nohighlight">\(2\)</span>が格納された変数<code class="docutils literal notranslate"><span class="pre">x</span></code>を<span class="math notranslate nohighlight">\(3\)</span>倍した結果を変数<span class="math notranslate nohighlight">\(y\)</span>に代入する．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2328,7 +2347,7 @@ lo
 </div>
 </section>
 <section id="id43">
-<h4>意図しない例<a class="headerlink" href="#id43" title="Permalink to this heading">#</a></h4>
+<h4>意図しない例<a class="headerlink" href="#id43" title="Link to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">print</span></code>の出力は数値データのように思えても変数<code class="docutils literal notranslate"><span class="pre">x</span></code>のデータ型が<code class="docutils literal notranslate"><span class="pre">str</span></code>型の場合，意図しない結果が出力される．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2358,7 +2377,7 @@ lo
 </div>
 </section>
 <section id="id44">
-<h4>変換方法<a class="headerlink" href="#id44" title="Permalink to this heading">#</a></h4>
+<h4>変換方法<a class="headerlink" href="#id44" title="Link to this heading">#</a></h4>
 <p>変数を<code class="docutils literal notranslate"><span class="pre">int()</span></code>で囲むとデータ型を<code class="docutils literal notranslate"><span class="pre">int</span></code>型へ変更できる．反対に，<code class="docutils literal notranslate"><span class="pre">str()</span></code>で囲むと<code class="docutils literal notranslate"><span class="pre">str</span></code>型へ変更できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2405,7 +2424,7 @@ lo
 </div>
 </section>
 <section id="id45">
-<h4>注意事項<a class="headerlink" href="#id45" title="Permalink to this heading">#</a></h4>
+<h4>注意事項<a class="headerlink" href="#id45" title="Link to this heading">#</a></h4>
 <p>すべての <code class="docutils literal notranslate"><span class="pre">str</span></code> 型が <code class="docutils literal notranslate"><span class="pre">int</span></code> 型にキャストできるわけではない．例えば，コメントとしている以下のコードを実行すると，エラーが発生する．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2418,10 +2437,10 @@ lo
 </section>
 </section>
 <section id="id46">
-<h3>タプル型からリスト型へ，リスト型からタプル型への変換<a class="headerlink" href="#id46" title="Permalink to this heading">#</a></h3>
+<h3>タプル型からリスト型へ，リスト型からタプル型への変換<a class="headerlink" href="#id46" title="Link to this heading">#</a></h3>
 <p>タプル型（<code class="docutils literal notranslate"><span class="pre">tuple</span></code>）をリスト型（<code class="docutils literal notranslate"><span class="pre">list</span></code>）へ，リスト型からタプル型へ変換する方法を学ぶ．タプルとリストの違いは要素の変更ができるかどうかである．プログラム内で意図しない変更を避けたいときはリストからタプルへ変更すると良い．また，ユーザ入力に応じた変更など要素を変更したい場面ではタプルからリストへ変換する必要がある．</p>
 <section id="id47">
-<h4>タプル型からリスト型への変換<a class="headerlink" href="#id47" title="Permalink to this heading">#</a></h4>
+<h4>タプル型からリスト型への変換<a class="headerlink" href="#id47" title="Link to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">)</span>
@@ -2476,7 +2495,7 @@ lo
 </div>
 </section>
 <section id="id48">
-<h4>リスト型からタプル型への変換<a class="headerlink" href="#id48" title="Permalink to this heading">#</a></h4>
+<h4>リスト型からタプル型への変換<a class="headerlink" href="#id48" title="Link to this heading">#</a></h4>
 <p>タプル型への変換は変数を<code class="docutils literal notranslate"><span class="pre">tuple()</span></code>で囲うことで実現．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2533,8 +2552,8 @@ lo
               
               
               
-                <footer class="prev-next-footer">
-                  <!-- Previous / next buttons -->
+                <footer class="prev-next-footer d-print-none">
+                  
 <div class="prev-next-area">
     <a class="left-prev"
        href="../01/introduction_and_setup.html"
@@ -2562,6 +2581,7 @@ lo
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -2672,6 +2692,7 @@ By Hiroaki Aizawa & Akira Furui
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2024 (CC BY 4.0).
@@ -2698,8 +2719,8 @@ By Hiroaki Aizawa & Akira Furui
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
