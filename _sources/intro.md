@@ -31,7 +31,7 @@
 | ---- | :----: | :----: | :----: |
 | [第1回：イントロダクションと<br>Google Colaboratoryの導入](docs/01/introduction_and_setup.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/ERki-foH6O9Fkf9b56c6FhcBKsL_b9OpOukHoupVeAKbkA) | - | - |
 | [第2回：変数（講義）](docs/02/variables_and_data_types.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/Ebw0RCmXjpFArr6WbBJTcNoB40vgANB9sdyK1E9A2OJqEg) | - | - |
-| [第3回：変数（演習）](docs/03/exercise_variables_and_data_types.ipynb) | - | 10/17 | 10/18公開 |
+| [第3回：変数（演習）](docs/03/exercise_variables_and_data_types.ipynb) | - | 10/17 | [Open](docs/03_ans/answer_variables_and_data_types.ipynb) |
 | [第4回：条件分岐（講義）](docs/04/conditional_branch.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/EbgTnLq0KlJCiyEOXb6DMDQBtf_cujtb99byaKZQGqJJrw) | - | - |
 | [第5回：条件分岐（演習）](docs/05/exercise_conditional_branch.ipynb) | - | 10/24 | 10/25公開 |
 | 第6回：繰り返し処理（講義） | 準備中 | - | - |
