@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>第5回：条件分岐（演習） &#8212; ゼロから始めるプログラミング</title>
+    <title>第5回：条件分岐（解答） &#8212; ゼロから始めるプログラミング</title>
   
   
   
@@ -57,11 +57,9 @@
     <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/05/exercise_conditional_branch';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/05_ans/answer_conditional_branch';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="第6回：繰り返し処理（講義）" href="../06/loops.html" />
-    <link rel="prev" title="第4回：条件分岐（講義）" href="../04/conditional_branch.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -124,6 +122,8 @@
       
       
       
+        
+      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -180,12 +180,12 @@
             </li>
         </ul>
         <p aria-level="2" class="caption" role="heading"><span class="caption-text">講義の教材</span></p>
-<ul class="current nav bd-sidenav">
+<ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../01/introduction_and_setup.html">第1回：イントロダクションとGoogle Colaboratoryの導入</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../02/variables_and_data_types.html">第2回：変数（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../03/exercise_variables_and_data_types.html">第3回：変数（演習）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../04/conditional_branch.html">第4回：条件分岐（講義）</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">第5回：条件分岐（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/exercise_conditional_branch.html">第5回：条件分岐（演習）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../06/loops.html">第6回：繰り返し処理（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../07/exercise_loops.html">第7回：繰り返し処理（演習）</a></li>
 </ul>
@@ -248,7 +248,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/05/exercise_conditional_branch.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/05_ans/answer_conditional_branch.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -296,7 +296,7 @@
       
       
       
-      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public/issues/new?title=Issue%20on%20page%20%2Fdocs/05/exercise_conditional_branch.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public/issues/new?title=Issue%20on%20page%20%2Fdocs/05_ans/answer_conditional_branch.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -326,7 +326,7 @@
       
       
       
-      <li><a href="../../_sources/docs/05/exercise_conditional_branch.ipynb" target="_blank"
+      <li><a href="../../_sources/docs/05_ans/answer_conditional_branch.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -410,7 +410,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>第5回：条件分岐（演習）</h1>
+    <h1>第5回：条件分岐（解答）</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -468,10 +468,8 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第5回：条件分岐（演習）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
-<p>学籍番号：…</p>
-<p>氏名：…</p>
-<hr class="docutils" />
+<h1>第5回：条件分岐（解答）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>※解答例はあくまで一例であり，他にも様々な解き方が考えられることに留意してください．</p>
 <section id="id2">
 <h2>演習1：真偽値と条件式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
 <section id="id3">
@@ -501,7 +499,16 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -513,7 +520,15 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="n">x</span> <span class="o">&gt;</span> <span class="n">y</span> <span class="o">*</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -525,7 +540,16 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">!=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -537,7 +561,32 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">3</span>
+
+<span class="n">x</span> <span class="o">&gt;=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
+
+<span class="n">x</span> <span class="o">&lt;=</span> <span class="n">y</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -552,7 +601,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="mi">6</span> <span class="ow">in</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -570,7 +625,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="nb">len</span><span class="p">(</span><span class="s2">&quot;programming&quot;</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -585,7 +646,16 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">temperature</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mi">35</span>
+
+<span class="k">if</span> <span class="n">temperature</span> <span class="o">&gt;=</span> <span class="mi">30</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;暑いです&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>暑いです
 </pre></div>
 </div>
 </div>
@@ -597,7 +667,16 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">password</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">password</span> <span class="o">=</span> <span class="s2">&quot;abc123&quot;</span>
+
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">password</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;パスワードが短すぎます&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>パスワードが短すぎます
 </pre></div>
 </div>
 </div>
@@ -615,7 +694,18 @@ document.write(`
 余りの計算方法は <a class="reference internal" href="../01/introduction_and_setup.html"><span class="std std-doc">第1回</span></a> または <a class="reference internal" href="../02/variables_and_data_types.html"><span class="std std-doc">第2回</span></a> の教材を参照されたい．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">a</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3で割り切れます&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3で割り切れません&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3で割り切れます
 </pre></div>
 </div>
 </div>
@@ -627,7 +717,18 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">score</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">score</span> <span class="o">=</span> <span class="mi">75</span>
+
+<span class="k">if</span> <span class="n">score</span> <span class="o">&gt;=</span> <span class="mi">60</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;合格&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;不合格&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>合格
 </pre></div>
 </div>
 </div>
@@ -644,7 +745,20 @@ document.write(`
 なお，変数 <code class="docutils literal notranslate"><span class="pre">age</span></code> には任意の値を代入し，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">age</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="k">if</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">3</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;入場料は無料です&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">age</span> <span class="o">&lt;=</span> <span class="mi">15</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;子供料金が必要です&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;大人料金が必要です&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>子供料金が必要です
 </pre></div>
 </div>
 </div>
@@ -663,7 +777,23 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 <p>なお，変数 <code class="docutils literal notranslate"><span class="pre">weight</span></code>（体重）と <code class="docutils literal notranslate"><span class="pre">height</span></code>（身長）には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">weight</span> <span class="o">=</span> <span class="mi">70</span>  <span class="c1"># kg</span>
+<span class="n">height</span> <span class="o">=</span> <span class="mf">1.75</span>  <span class="c1"># m</span>
+
+<span class="n">bmi</span> <span class="o">=</span> <span class="n">weight</span> <span class="o">/</span> <span class="p">(</span><span class="n">height</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mf">18.5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;痩せ型&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">bmi</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;普通体型&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;肥満&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>普通体型
 </pre></div>
 </div>
 </div>
@@ -678,7 +808,18 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">if</span> <span class="n">x</span> <span class="o">!=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件に合致します&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;条件に合致しません&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>条件に合致します
 </pre></div>
 </div>
 </div>
@@ -686,12 +827,22 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </section>
 <section id="id18">
 <h3>演習5-2<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
-<p>変数 <code class="docutils literal notranslate"><span class="pre">day</span></code> を用いて，平日（ <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> から <code class="docutils literal notranslate"><span class="pre">&quot;Friday&quot;</span></code>）であれば「仕事です」，
+<p>変数 <code class="docutils literal notranslate"><span class="pre">day</span></code> に格納された曜日（文字列）が平日（ <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> から <code class="docutils literal notranslate"><span class="pre">&quot;Friday&quot;</span></code>）であれば「仕事です」，
 <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> か <code class="docutils literal notranslate"><span class="pre">&quot;Sunday&quot;</span></code> であれば「休日です」と表示するプログラムを作成せよ．</p>
 <p>なお，変数 <code class="docutils literal notranslate"><span class="pre">day</span></code> には適当な曜日（文字列）を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">day</span> <span class="o">=</span> <span class="s2">&quot;Saturday&quot;</span>
+
+<span class="k">if</span> <span class="n">day</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Monday&quot;</span><span class="p">,</span> <span class="s2">&quot;Tuesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Wednesday&quot;</span><span class="p">,</span> <span class="s2">&quot;Thursday&quot;</span><span class="p">,</span> <span class="s2">&quot;Friday&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;仕事です&quot;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">day</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;Saturday&quot;</span><span class="p">,</span> <span class="s2">&quot;Sunday&quot;</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;休日です&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>休日です
 </pre></div>
 </div>
 </div>
@@ -714,7 +865,46 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 <p>なお，変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> には適当な値を代入し，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例①</span>
+<span class="c1"># 上記の要件をそのままプログラムに落とし込むと以下のようになる（ただしやや冗長な書き方である）．</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FizzBuzz
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例②</span>
+<span class="c1"># もう少しコンパクトに書いた場合．条件式は上から順番に判定されることを利用している．</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">15</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FizzBuzz
 </pre></div>
 </div>
 </div>
@@ -725,10 +915,26 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 <p>変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> の値に対し，3の倍数と3のつく数の時だけ「3に関する数です」と出力するプログラムを作成せよ．なお，変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> には適当な値を代入し，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">number</span> <span class="o">=</span> <span class="mi">13</span>
+
+<span class="k">if</span> <span class="p">(</span><span class="n">number</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="s1">&#39;3&#39;</span> <span class="ow">in</span> <span class="nb">str</span><span class="p">(</span><span class="n">number</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;3に関する値です&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3に関する値です
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition- admonition">
+<p class="admonition-title">解答の解説</p>
+<p>おそらく躓きやすいポイントとしては，「3のつく数かどうか」を条件式としてどのように表現するか，であろう．</p>
+<p>上記の解答例では，第4回で学んだ 文字列に対する<code class="docutils literal notranslate"><span class="pre">in</span></code> を用いて，「<code class="docutils literal notranslate"><span class="pre">number</span></code> の中に <code class="docutils literal notranslate"><span class="pre">3</span></code> が含まれているか？」を条件式として表現している．
+ただし，変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> には数値が格納されているため，<code class="docutils literal notranslate"><span class="pre">str()</span></code> を用いて文字列型に変換している（<code class="docutils literal notranslate"><span class="pre">str()</span></code> の復習は <a class="reference internal" href="#../02/variables_and_data_types.html#id43"><span class="xref myst">こちら</span></a>）．</p>
+<p>例えば <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">13</span></code> の場合，「文字列 <code class="docutils literal notranslate"><span class="pre">'13'</span></code> の中に文字 <code class="docutils literal notranslate"><span class="pre">'3'</span></code> が含まれているか？」という条件式を考えていることになる．</p>
 </div>
 </section>
 <section id="id21">
@@ -739,7 +945,34 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 <p>なお，変数 <code class="docutils literal notranslate"><span class="pre">a</span></code>，<code class="docutils literal notranslate"><span class="pre">b</span></code>，<code class="docutils literal notranslate"><span class="pre">operator</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答例</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">operator</span> <span class="o">=</span> <span class="s2">&quot;/&quot;</span>
+
+<span class="k">if</span> <span class="n">operator</span> <span class="o">==</span> <span class="s2">&quot;+&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+<span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s2">&quot;-&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">-</span> <span class="n">b</span>
+<span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s2">&quot;*&quot;</span><span class="p">:</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="k">elif</span> <span class="n">operator</span> <span class="o">==</span> <span class="s2">&quot;/&quot;</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;0で割ることはできません&quot;</span><span class="p">)</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;無効な演算子です&quot;</span><span class="p">)</span>
+    <span class="n">result</span> <span class="o">=</span> <span class="kc">None</span>
+
+<span class="k">if</span> <span class="n">result</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">operator</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10 / 2 = 5.0
 </pre></div>
 </div>
 </div>
@@ -757,16 +990,16 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
         },
         codeMirrorConfig: {
             theme: "abcdef",
-            mode: "python"
+            mode: "zeropro-book"
         },
         kernelOptions: {
-            name: "python3",
-            path: "./docs/05"
+            name: "zeropro-book",
+            path: "./docs/05_ans"
         },
         predefinedOutput: true
     }
     </script>
-    <script>kernelName = 'python3'</script>
+    <script>kernelName = 'zeropro-book'</script>
 
                 </article>
               
@@ -778,24 +1011,6 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
                 <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="../04/conditional_branch.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">第4回：条件分岐（講義）</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../06/loops.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">第6回：繰り返し処理（講義）</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
