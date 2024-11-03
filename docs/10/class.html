@@ -1,0 +1,1318 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>第10回：クラス（講義） &#8212; ゼロから始めるプログラミング</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'docs/10/class';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="第11回：クラス（演習）" href="../11/exercise_class.html" />
+    <link rel="prev" title="第9回：関数（演習）" href="../09/exercise_functions_and_scope.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    ゼロから始めるプログラミング
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">講義の教材</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../01/introduction_and_setup.html">第1回：イントロダクションとGoogle Colaboratoryの導入</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../02/variables_and_data_types.html">第2回：変数（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../03/exercise_variables_and_data_types.html">第3回：変数（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../04/conditional_branch.html">第4回：条件分岐（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../05/exercise_conditional_branch.html">第5回：条件分岐（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../06/loops.html">第6回：繰り返し処理（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../07/exercise_loops.html">第7回：繰り返し処理（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../08/functions_and_scope.html">第8回：関数（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../09/exercise_functions_and_scope.html">第9回：関数（演習）</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">第10回：クラス（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../11/exercise_class.html">第11回：クラス（演習）</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../submission/submission.html">課題提出方法</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/10/class.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch on Colab"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+  </span>
+<span class="btn__text-container">Colab</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/ground-zero-programming/zero-pro2024-public/issues/new?title=Issue%20on%20page%20%2Fdocs/10/class.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/docs/10/class.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>第10回：クラス（講義）</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">内容</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">クラスとは？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">クラスの利用場面</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クラスの作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">インスタンス変数の作成</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リストで学ぶインスタンス化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">インスタンスメソッドの定義</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">インスタンスメソッドをクラス内で呼び出す</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">リストで学ぶインスタンスメソッド</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">【発展】 関数とインスタンスメソッドの違い</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">【発展】 リストによるクラスの管理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">【発展】 クラスの継承</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="id1">
+<h1>第10回：クラス（講義）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<p>担当：相澤宏旭</p>
+<section id="id2">
+<h2>内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<p>第10回目の講義では，Pythonだけでなくオブジェクト指向型プログラミング言語において重要なクラスの概念を学ぶ．クラスは関数以上に理解に手間取るプログラミングの仕組みであるが，使いこなすことができれば非常に便利な仕組みである．本講義では初めにクラスとは何か？関数との違いは？どのような場面で利用されるのか？について簡単に紹介したあと，クラスの作成方法やその機能を順番に解説する．具体的には，以下の項目について理解し，クラスを使いこなせることが本講義の目標である．</p>
+<ul class="simple">
+<li><p>クラスの定義方法，クラスとインスタンス化の概念を理解する．</p></li>
+<li><p>インスタンス変数，インスタンスメソッドを定義できる．</p></li>
+<li><p>【発展】他クラスから継承し，新たなクラスを作成できる．</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>クラスとは？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/class_image.png" /></p>
+<p><strong>クラス（class）</strong> とはデータの値や処理の振る舞いのルールを記述できる仕組みである．クラスや振る舞いのルールを理解するために，図に示すような設計図をイメージされたい．私たちは何かモノを作るとき，モノの情報や作り方を決めた設計図を予め作成し，その設計図をもとにモノを作成する．例えば，カメラの場合だと，製品名，大きさ，デザイン，レンズ，写真の保存の仕方など製造するためのあらゆる情報が設計図には記載されている．そして，設計図からカメラを製造し，完成品ができる．クラスはこの一連の手順に含まれるモノの設計書としてイメージすると良い．そして，後述するが，Pythonでは設計図をもとに作成された完成品を <strong>インスタンス</strong> または <strong>オブジェクト</strong> といい，インスタンスを作成することを <strong>インスタンス化</strong> という．</p>
+<p>また，発展的な内容であるが，カメラの性能をアップデートしたり，デザインを変更した改良品の設計図を作成したい場合もある．Pythonでは，改良前の設計図をベースに新たな設計図を作成する <strong>継承</strong> という仕組みもサポートされている．クラスの簡単なイメージは以上であるが，厳密な定義や詳細な機能はゼロからはじめるプログラミングの内容を大幅に超えるため，本講義では，クラスがどのような場面で便利なのか？という視点から必要最低限の機能を紹介したい．</p>
+</section>
+<section id="id4">
+<h2>クラスの利用場面<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<p>次の機能を持つプログラムを作成する場面を想定されたい．あなたは動物園の管理者で動物種に基づいて名前，飼育場所，画像など飼育動物の情報をコンピュータで管理する必要がある．まず初めに，飼育されている犬のガウス，猫のオイラーについて動物種と名前を管理してみよう．</p>
+<p>このような複数データを扱う場合，リストが便利であった．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;猫&#39;</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ガウス&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">print</span></code>文を使って煩雑なコードであるが以下のように出力できる．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">species</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">：</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬：ガウス
+猫：オイラー
+</pre></div>
+</div>
+</div>
+</div>
+<p>出力することができた．続いて，動物種に基づいて鳴き声を出力させることを考える．この場合，同様にリストでも管理することができるが関数の機能で実装する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">dog_sound</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;ワンワン&#39;</span>
+
+<span class="k">def</span> <span class="nf">cat_sound</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;ニャア&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">species</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;犬&#39;</span><span class="p">:</span>
+        <span class="n">sound</span> <span class="o">=</span> <span class="n">dog_sound</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;猫&#39;</span><span class="p">:</span>
+        <span class="n">sound</span> <span class="o">=</span> <span class="n">cat_sound</span><span class="p">()</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">：</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> ... </span><span class="si">{</span><span class="n">sound</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬：ガウス ... ワンワン
+猫：オイラー ... ニャア
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">for</span></code>文と条件分岐を組み合わせて実装することができた．ではここから鳥のニュートンの情報と鳴き声関数を追加することも考えよう．リストで管理していたので鳥を追加した新たなリストと関数を定義すれば良い．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">species</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;猫&#39;</span><span class="p">,</span> <span class="s1">&#39;鳥&#39;</span><span class="p">]</span>
+<span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;ガウス&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">,</span> <span class="s1">&#39;ニュートン&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">bird_sound</span><span class="p">():</span>
+    <span class="k">return</span> <span class="s1">&#39;チュンチュン&#39;</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">species</span><span class="p">)):</span>
+    <span class="k">if</span> <span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;犬&#39;</span><span class="p">:</span>
+        <span class="n">sound</span> <span class="o">=</span> <span class="n">dog_sound</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;猫&#39;</span><span class="p">:</span>
+        <span class="n">sound</span> <span class="o">=</span> <span class="n">cat_sound</span><span class="p">()</span>
+    <span class="k">elif</span> <span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;鳥&#39;</span><span class="p">:</span>
+        <span class="n">sound</span> <span class="o">=</span> <span class="n">bird_sound</span><span class="p">()</span>
+        
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">species</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1">：</span><span class="si">{</span><span class="n">names</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">}</span><span class="s1"> ... </span><span class="si">{</span><span class="n">sound</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬：ガウス ... ワンワン
+猫：オイラー ... ニャア
+鳥：ニュートン ... チュンチュン
+</pre></div>
+</div>
+</div>
+</div>
+<p>動物を追加するたびにリストの要素と関数を追加する必要がでてきたが実装することができた．</p>
+<p>ここでクラスの利点をイメージしてもらうために次の場面を想像されたい．</p>
+<ul class="simple">
+<li><p>飼育している動物が100頭以上いたらプログラムはどうなるだろうか？</p></li>
+<li><p>体温や体重など定期的に更新する必要があるデータを管理したいときはどうすれば良いだろうか？</p></li>
+<li><p>繁殖に成功し，同一種の動物の情報を追加したいときはどうすれば良いだろうか？</p></li>
+<li><p>動物種をさらに細分化したいときはどうすれば良いだろうか？</p></li>
+<li><p>あなた以外がこれらの情報を管理したいとき管理方法はどうすべきだろうか？</p></li>
+</ul>
+<p>試しに実装してみるとわかると思うが，このような場面をリストで実装しようと思うと，データが増えたり，新たな情報や機能を追加するたびに，再度リストの定義を行い，プログラムを大きく書き換える必要がある．<code class="docutils literal notranslate"><span class="pre">range</span></code>関数や繰り返し処理の導入理由と同じように，大量のデータを持つ複数のリストの管理はデータの管理やコードの可読性の問題からプログラム作成者にとって非常に大変な作業となることは容易に想像できるだろう．</p>
+<p>またこのような動物管理だけでは自身の専攻との関連が結びつきにくいかと思うが，例えば，</p>
+<ul class="simple">
+<li><p>実験ごとに異なる実験パラメータや結果を持つ実験について実験の設定，実行方法，結果の保存を一貫して管理したい場面</p></li>
+<li><p>物理法則や化学反応について異なる初期条件でのシミュレーションやアルゴリズムを実行したい場面</p></li>
+<li><p>文書や書籍をについて著者，タイトル，内容などの情報の編集や管理を一括して行いたい場面</p></li>
+<li><p>連絡先情報，購買履歴，顧客の好みなどユーザーから取得した情報を管理して分析したい場面</p></li>
+<li><p>学生，教員，授業などを授業について時間割，成績，出席状況などの情報を一括で管理したい場面</p></li>
+<li><p>イベントの枠組みについて日程，参加者，ロケーションなどの情報を扱いたい場面</p></li>
+<li><p>インターネットから自動的に取得した情報を管理し，データの編集や分析を行いたい場面</p></li>
+</ul>
+<p>を想像してもらうと，前述したクラスの利点やデータや機能を整理・操作・保守したりデータを分析し，新たな知見を得るためのプログラミングの活用場面がイメージできるかと思う．</p>
+<p>以降，発展内容を含むが上記の例をベースにクラスを説明する．</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>クラスはPython特有の仕組みではなくC++やJavaなどオブジェクト指向型言語が持つ機能である．詳細は専門科目または<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2023-public/docs/advanced_materials.html">さらに勉強したい人へ</a>のPythonプログラミングを参考にされたい．</p>
+</div>
+</section>
+<section id="id5">
+<h2>クラスの作成<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/class.png" /></p>
+<p>クラスは以下の例ように <code class="docutils literal notranslate"><span class="pre">class</span></code> を使うと定義することができる．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">初期化処理</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">class</span></code>に加えて<code class="docutils literal notranslate"><span class="pre">__init__</span></code>と<code class="docutils literal notranslate"><span class="pre">self</span></code>という新たな処理と名前が登場した．簡単に説明すると，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>はクラスからデータを作成したときに一度だけ実行される初期化処理（<strong>初期化メソッド</strong>）である．また<code class="docutils literal notranslate"><span class="pre">self</span></code>はクラス自身を示す変数である．<code class="docutils literal notranslate"><span class="pre">self</span></code>は <strong>インスタンス変数</strong> と呼ばれるクラスに保存された変数にアクセスするために利用される変数である．詳細は後述する．</p>
+<p>これ以外にも，クラスには複数の機能がサポートされており，書き方にはさまざまな流儀がある．まずはコピー&amp;ペーストでいいので使い方に慣れてほしい．</p>
+<p>上図に示すような動物を管理するための<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスを以下のように定義する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;動物クラスを作成しました&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>上記のセルはクラスが持つルール（ここでは初期化メソッドのみ）を定義した．ここではクラスがもつ処理を定義しただけなので，セルを実行しただけでは何も表示されない．</p>
+<p>クラスを利用するためにはクラスからデータの実体を作成する必要がある．これを <strong>インスタンス化</strong> といい，クラスから作成されたデータの実体を <strong>インスタンス</strong> または <strong>オブジェクト</strong> という．以下のセルでクラスをインスタンス化してオブジェクト <code class="docutils literal notranslate"><span class="pre">a</span></code> を作成する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>動物クラスを作成しました
+</pre></div>
+</div>
+</div>
+</div>
+<p>上記のセルを実行すると，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>内の処理である <code class="docutils literal notranslate"><span class="pre">print('動物クラスを作成しました')</span></code> が呼び出されたことがわかる．前述したように，これは初期化メソッドと呼ばれる <code class="docutils literal notranslate"><span class="pre">__init__</span></code> による初期化処理がクラスからオブジェクトをインスタンス化したときに実行されたことを示している．</p>
+</section>
+<section id="id6">
+<h2>インスタンス変数の作成<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<p>続いて，<code class="docutils literal notranslate"><span class="pre">self</span></code>を理解するために，<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスに動物種を追加してみる．以下のように，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>を書き換えることで実装できる．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span>
+</pre></div>
+</div>
+<p>初期化処理を行う <code class="docutils literal notranslate"><span class="pre">__init__</span></code> メソッドの引数に変数（<code class="docutils literal notranslate"><span class="pre">variable</span></code>）が加えられ，関数内部で <code class="docutils literal notranslate"><span class="pre">self.variable</span> <span class="pre">=</span> <span class="pre">variable</span></code>の処理が追加されている．この処理は関数の回で学んだ引数の受け渡しと．クラス自身を表す <code class="docutils literal notranslate"><span class="pre">self</span></code> に変数 <code class="docutils literal notranslate"><span class="pre">variable</span></code> を代入する処理である．言い換えると，クラス内部に変数 <code class="docutils literal notranslate"><span class="pre">variable</span></code> を保存する処理である．このクラスが持つ変数は <strong>インスタンス変数</strong> と呼ばれ，この処理によってデータを保持できるのである．</p>
+<p>以下でインスタンス変数を介して動物の名前 <code class="docutils literal notranslate"><span class="pre">species</span></code> を加えた新たなクラスを定義する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>インスタンス変数 <code class="docutils literal notranslate"><span class="pre">self.species</span></code> を持つクラスを定義できた．続いて，クラスからインスタンスを作成する．</p>
+<p>ここで関数のときとどうように，<code class="docutils literal notranslate"><span class="pre">__init__</span></code> メソッドには名前を示す変数 <code class="docutils literal notranslate"><span class="pre">species</span></code> が引数として加えられているのでインスタンス化のときに名前を与える必要がある．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>今回は，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>で<code class="docutils literal notranslate"><span class="pre">print</span></code>をしていないので文字列が出力されていないことに注意されたい．インスタンス変数を出力するためには <code class="docutils literal notranslate"><span class="pre">インスタンス.インスタンス変数名</span></code>で変数にアクセスする．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">species</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;犬&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>続いて，名前 <code class="docutils literal notranslate"><span class="pre">name</span></code> も追加したクラスを作成する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>インスタンス化の際には，<code class="docutils literal notranslate"><span class="pre">species</span></code> と <code class="docutils literal notranslate"><span class="pre">name</span></code> の両方を指定する必要がある．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>定義したインスタンスにアクセスし変数を出力する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>以上のように，インスタンス変数を持つクラスを定義することでインスタンスにデータをまとめることができた．</p>
+<p>クラスの利点を確認するために，他の動物のインスタンスも作成してみる．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;猫&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;鳥&#39;</span><span class="p">,</span> <span class="s1">&#39;ニュートン&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>定義したインスタンス <code class="docutils literal notranslate"><span class="pre">a,b,c</span></code> について異なるインスタンス変数が定義されていることを，アクセスするインスタンス名に注意しつつ，以下のセルから確認して欲しい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+猫のオイラーです．
+鳥のニュートンです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>以上のようにデータ単位でインスタンス変数を扱うことができ，リストで管理するよりもデータの追加や削除が容易になったことがわかるかと思う．またインスタンス変数は数値データや文字列だけでなくリストや別のクラスから作成されたインスタンスも与えることができ，関数の引数のようにデフォルト引数やキーワード引数も設定できる．</p>
+<div class="admonition caution">
+<p class="admonition-title">Caution</p>
+<p>インスタンス変数は実行の手順からわかるように，<strong>インスタンス化</strong> されて初めてクラスに保存される変数である．また <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 内部で <code class="docutils literal notranslate"><span class="pre">variable</span></code> と <code class="docutils literal notranslate"><span class="pre">self.variable</span></code> はそれぞれ引数によって与えられた変数，インスタンスが持つ変数であることに注意されたい．これらの変数は意味が異なるのである．</p>
+</div>
+<section id="id7">
+<h3>リストで学ぶインスタンス化<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<p>クラスとインスタンスはプログラミング初学者にとって非常にわかりにくい概念である．よくある説明例としては，前述のようにクラスは設計図，インスタンスは設計図をもとに作成されたモノであるというものである．もし，この説明例で理解ができなかったとしても，利用するだけなら容易であるため心配は不要である．第2回で学んだ <strong>リスト</strong> を思い出してほしい．リストの作成は既にできるはずである．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># リストクラスからインスタンスの作成</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>実は，上記の処理はリストの振る舞いを定義した設計図（ <code class="docutils literal notranslate"><span class="pre">list</span></code> クラス）から，初期値 <code class="docutils literal notranslate"><span class="pre">1,2,3</span></code> を与えられ，リストの実体 <code class="docutils literal notranslate"><span class="pre">l</span></code> を作成（インスタンス化）しているのである．ゼロから始めるプログラミングではクラスが利用できるだけも十分である．プログラムの内部の挙動や仕組みを理解する前に，コードを写径し，とりあえず実行してみることも大切である．</p>
+</section>
+</section>
+<section id="id8">
+<h2>インスタンスメソッドの定義<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<p>前述のセルでは作成したインスタンスに対して <code class="docutils literal notranslate"><span class="pre">print</span></code> 文を呼び出した．データの管理はクラスによって容易になったが，処理・機能は不便なままである．そこで，クラスが持つ機能を新たに追加する．このクラスが持つ機能は <strong>インスタンスメソッド</strong> または <strong>インスタンス関数</strong> と呼ばれ，以下のように定義できる．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">variable</span> <span class="o">=</span> <span class="n">variable</span>
+
+    <span class="k">def</span> <span class="nf">インスタンスメソッド名</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">引数</span><span class="p">):</span>
+        <span class="n">処理</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">__init__</span></code>と同じ深さのインデントで新たなメソッド（処理）を定義している．これがインスタンスメソッドである．メソッドの第一引数は <code class="docutils literal notranslate"><span class="pre">self</span></code> を指定することに注意されたい．以下が，前述の <code class="docutils literal notranslate"><span class="pre">print</span></code> をインスタンスメソッドとして定義した <code class="docutils literal notranslate"><span class="pre">Animal</span></code> クラスである．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>初期化メソッド（<code class="docutils literal notranslate"><span class="pre">__init__</span></code>）で <code class="docutils literal notranslate"><span class="pre">self.species</span> <span class="pre">=</span> <span class="pre">species</span></code> と <code class="docutils literal notranslate"><span class="pre">self.name</span> <span class="pre">=</span> <span class="pre">name</span></code> でクラスが持つインスタンス変数を作成した．今回導入したインスタンスメソッドないで <code class="docutils literal notranslate"><span class="pre">self.species</span></code> と <code class="docutils literal notranslate"><span class="pre">self.name</span></code> のインスタンス変数にアクセスしていることに着目されたい．後述するが，<code class="docutils literal notranslate"><span class="pre">print_data</span></code> で引数として <code class="docutils literal notranslate"><span class="pre">species</span></code> や <code class="docutils literal notranslate"><span class="pre">name</span></code> を与えることなく，このような処理が設計できることがポイントであり，第8回で学んだ関数との大きな違いである．</p>
+<p>インスタンスメソッドの呼び出しをするために，まずクラスからインスタンス化をする．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;猫&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;鳥&#39;</span><span class="p">,</span> <span class="s1">&#39;ニュートン&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>インスタンスメソッドは <code class="docutils literal notranslate"><span class="pre">インスタンス名.インスタンスメソッド名(引数)</span></code>で呼び出すことができる．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+<span class="n">b</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+<span class="n">c</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+猫のオイラーです．
+鳥のニュートンです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>以上よりインスタンス変数に外からアクセスすることなくクラス内で完結する処理（=インスタンスに紐付けられた処理）を実現できたことが確認できる．</p>
+<p>インスタンスメソッドは第8回で学んだ関数のように<code class="docutils literal notranslate"><span class="pre">return</span></code>もできる．動物の情報をリストとして <code class="docutils literal notranslate"><span class="pre">return</span></code> するインスタンスメソッド <code class="docutils literal notranslate"><span class="pre">get_data</span></code> を実装してみる．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">animal_data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">animal_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>リスト型のデータが<code class="docutils literal notranslate"><span class="pre">return</span></code>される．<code class="docutils literal notranslate"><span class="pre">return</span></code>されたデータを出力する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">animal_data</span> <span class="o">=</span> <span class="n">a</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">animal_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;犬&#39;, &#39;ガウス&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>関数と同様に <code class="docutils literal notranslate"><span class="pre">return</span></code> できることが確認できた．</p>
+<p>インスタンスメソッドには引数も与えることができる．以下に，<code class="docutils literal notranslate"><span class="pre">print_data</span></code>メソッドの引数に年齢を示す <code class="docutils literal notranslate"><span class="pre">age</span></code> を加えて，同様に <code class="docutils literal notranslate"><span class="pre">print</span></code> するメソッドを実装する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">age</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">は</span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s1">歳です．&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">animal_data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">animal_data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>インスタンスメソッドへの引数 <code class="docutils literal notranslate"><span class="pre">age</span></code> を渡すことを忘れないようにインスタンス化と呼び出しを行えば，インスタンスメソッド内でインスタンス変数と引数の両方へアクセスできることがわかるかと思う．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">print_data</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスは5歳です．
+</pre></div>
+</div>
+</div>
+</div>
+<p>以上より，クラスにデータだけでなく機能（関数）を追加する方法を学んだ．ここまででもリストと比較して便利にデータを管理できることがイメージできるかと思う．</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>上記の<code class="docutils literal notranslate"><span class="pre">return</span></code>は<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/08/functions_and_scope.html#id10">第8回 複数の戻り値</a>を利用せずに単一のリストで<code class="docutils literal notranslate"><span class="pre">return</span></code>している．タプルで複数の戻り値として実装することもできる．</p>
+</div>
+<section id="id9">
+<h3>インスタンスメソッドをクラス内で呼び出す<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<p>インスタンスメソッドもまたインスタンス変数と同じようにクラス内で呼び出すことができる．これは <code class="docutils literal notranslate"><span class="pre">self.インスタンスメソッド名(引数)</span></code>で実現できる．以下のコードを参考にされたい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">species</span> <span class="o">=</span> <span class="n">species</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">animal_data</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">species</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">animal_data</span>
+
+    <span class="k">def</span> <span class="nf">check_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">animal_data</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_data</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">animal_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>上記の<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスにはインスタンスメソッド<code class="docutils literal notranslate"><span class="pre">get_data</span></code>をインスタンスメソッド内で呼び出す<code class="docutils literal notranslate"><span class="pre">check_data</span></code>が追加で含まれている．<code class="docutils literal notranslate"><span class="pre">get_data</span></code>をインスタンスメソッド内で呼び出せることを確認するために，インスタンス化して，<code class="docutils literal notranslate"><span class="pre">check_data</span></code>メソッドを呼び出す．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">check_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;犬&#39;, &#39;ガウス&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">get_data</span></code>が呼び出されて，前述の例と同様の結果が得られたことがわかる．</p>
+</section>
+<section id="id10">
+<h3>リストで学ぶインスタンスメソッド<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<p>インスタンス化の項で既に学んだ <strong>リスト</strong> の実態はリストの挙動がまとめられたクラスからインスタンス化されたデータであると説明した．リストは以下で定義できた．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span> <span class="c1"># リストクラスからインスタンスの作成</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>ここで，再度，第2回の <a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/02/variables_and_data_types.html#id25">リストの演算</a> にある要素の追加・削除・挿入の説明を読み返してほしい．例えば，要素を追加したいときは，<code class="docutils literal notranslate"><span class="pre">リスト.append(追加する値)</span></code>と呼び出すとあった．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 100]
+</pre></div>
+</div>
+</div>
+</div>
+<p>実は，この<code class="docutils literal notranslate"><span class="pre">append</span></code>はインスタンスメソッドなのである．本講義では，クラス・インスタンス変数・インスタンスメソッドなど聞きなれない用語が多数現れるが，各データ型が持つ機能を調べさえすればプログラミングは容易にできるのである．そして，クラスの概念と使い方をある程度理解できれば，Pythonのリストの機能を拡張したり，データ型自体を定義するといったことができるようになる．</p>
+<div class="admonition- admonition">
+<p class="admonition-title">クラスのまとめ</p>
+<ul class="simple">
+<li><p>クラスは変数や処理（関数）をまとめた設計図のような機能である．</p>
+<ul>
+<li><p>このとき変数はインスタンス変数，処理はインスタンスメソッドと呼ばれる．</p></li>
+</ul>
+</li>
+<li><p>クラスからデータの実態を作成するためにインスタンス化という手順が必要である．</p>
+<ul>
+<li><p>インスタンス化をしたとき初期化メソッドである <code class="docutils literal notranslate"><span class="pre">__init__</span></code>が呼び出される．</p></li>
+</ul>
+</li>
+<li><p>クラス自身は <code class="docutils literal notranslate"><span class="pre">self</span></code> から参照できる．</p></li>
+</ul>
+</div>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>本講義は教養科目ということもあり，クラスの詳細な機能やオブジェクト指向型プログラミングに関する詳しい説明は省略している．本講義でPythonの基礎文法の内容は終了であるが，クラスだけでなく関数といったこれまで勉強した使い方以外にも，Pythonにはより綺麗で便利なプログラムを作成するための仕組みがいくつも提供されている．ぜひ，本講義資料だけでなく，<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/advanced_materials.html#python">さらに勉強したい人へ: Pythonプログラミング</a>のページから自身で調べてみてほしい．</p>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id11">
+<h2>【発展】 関数とインスタンスメソッドの違い<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<p>ここまでのインスタンスメソッドの定義方法と利用場面を理解できた受講者はおそらく「関数とインスタンスメソッドの違いってなんだろう？」と疑問に思うだろう．厳密な違いを理解するためには，<strong>オブジェクト指向プログラミング</strong> そのものの説明が必要であり，ゼロからはじめるプログラミングの内容を大きく超えてしまうのでここでは以下のサンプルコードからこの違いを簡単に説明したい．</p>
+<p>第8回の講義で学んだように関数は与えた入力に対してなんらかの処理をして出力する変換装置のイメージであった．上記の例と同様に， <code class="docutils literal notranslate"><span class="pre">{動物種}の{名前}です．</span></code> と <code class="docutils literal notranslate"><span class="pre">print</span></code> する関数を考える．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="n">species</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">species</span><span class="si">}</span><span class="s1">の</span><span class="si">{</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">print_data</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>上記のように <code class="docutils literal notranslate"><span class="pre">print_data</span></code>関数で飼育動物の情報を出力できる．実装する機能によっては関数で十分であるが，引数をその都度渡す必要があり，クラスの利用場面で述べたように膨大なデータ数を管理したり，データの構造をカスタマイズしたいときなど不便となる場合がある．</p>
+<p>一方，インスタンスメソッドの例として前述したクラス内に定義された <code class="docutils literal notranslate"><span class="pre">print_data</span></code>関数を思い出してほしい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">)</span>
+<span class="n">a</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>この関数も同様の出力を得られるが，以下の2点が関数と異なる．</p>
+<ol class="arabic simple">
+<li><p>インスタンス変数を呼び出すことができる．</p></li>
+<li><p>クラスに紐付けられている．</p></li>
+</ol>
+<p>1点目は両者の引数を見てもわかるだろうが，インスタンスメソッドはメソッド内で引数に与えることなくインスタンス変数を参照できる．そのため，呼び出すたびに引数を指定する必要がなく，インスタンス変数に関係した機能を定義することができる．これと関連するが，インスタンスメソッドはクラスに備わっている関数であるため，類似した機能を持つクラスを定義するときや，複数のデータをクラスで管理するときに便利な仕組みとなる．詳細はリストによるクラスの管理やクラスの継承で後述する．クラスにおけるインスタンスメソッドは，関数の仕組みを <strong>インスタンス変数</strong> で拡張した仕組みとも言える．</p>
+<p>また前述のリストで学ぶインスタンスメソッドを読むと，リストの要素を定義するインスタンス化の処理が必要であること，リストに新たな要素を追加する処理は関数よりもインスタンスメソッドとして定義されている方が便利であることがイメージできる．</p>
+</section>
+<section id="id12">
+<h2>【発展】 リストによるクラスの管理<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<p>前述までのクラスの利用方法では，ある動物に対して新たな関数やデータを追加することは便利であるが，複数の動物を管理しようとしたとき，頭数分のインスタンスメソッドの呼び出しが必要となる．発展的なテクニックであるが，インスタンスをリストで管理するとループを使って便利に管理できる．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;猫&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;鳥&#39;</span><span class="p">,</span> <span class="s1">&#39;ニュートン&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">zoo</span><span class="p">:</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+猫のオイラーです．
+鳥のニュートンです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>このように管理すると新たな動物を加えるときも便利である．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;犬&#39;</span><span class="p">,</span> <span class="s1">&#39;ガウス&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;猫&#39;</span><span class="p">,</span> <span class="s1">&#39;オイラー&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;鳥&#39;</span><span class="p">,</span> <span class="s1">&#39;ニュートン&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;羊&#39;</span><span class="p">,</span> <span class="s1">&#39;マクローリン&#39;</span><span class="p">),</span>
+    <span class="n">Animal</span><span class="p">(</span><span class="s1">&#39;豚&#39;</span><span class="p">,</span> <span class="s1">&#39;ポアソン&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">zoo</span><span class="p">:</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬のガウスです．
+猫のオイラーです．
+鳥のニュートンです．
+羊のマクローリンです．
+豚のポアソンです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>もちろんリストだけでなく辞書などの他のデータ型で管理しても良い．クラスのインスタンスを管理するクラスも考えることができる．管理する方法は作成したいアプリケーションの要件に依存するが，色々な実装を試してみると良い．</p>
+</section>
+<section id="id13">
+<h2>【発展】 クラスの継承<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<p><img alt="" src="../../_images/inheritance.png" /></p>
+<p>これまでは新たな変数や機能を追加しようとしたとき，クラスの再定義が必要であった．Pythonを含むオブジェクト指向型言語には，クラスの機能を別のクラスで再利用する <strong>継承</strong> という仕組みが提供されている．ここでは，継承を利用して，クラスを再定義することなく，変数や機能を追加する方法について説明する．</p>
+<p>継承の方法は以下である．<code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">クラス名:</span></code>に継承するクラス名を与えると継承するクラスのインスタンスメソッドが利用できる．<code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>は継承するクラスの<code class="docutils literal notranslate"><span class="pre">__init__</span></code>関数を呼び出している．</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">(</span><span class="n">継承するクラス名</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">,</span> <span class="n">new_variable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">new_variable</span> <span class="o">=</span> <span class="n">new_variable</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">新たに追加するインスタンスメソッド名</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">引数</span><span class="p">):</span>
+        <span class="n">処理</span>
+</pre></div>
+</div>
+<p>継承元のインスタンス変数を利用しない場合は <code class="docutils literal notranslate"><span class="pre">super()</span></code>を呼び出す必要はないことに注意されたい（インスタンスメソッドのみを利用したい場合など）．</p>
+<div class="admonition- admonition">
+<p class="admonition-title">親クラスと子クラス</p>
+<p>継承元のクラスは親クラスやスーパークラス，継承先のクラスは子クラスやサブクラスと呼ばれる．</p>
+</div>
+<p>実際にクラスの継承から鳴き声機能を持つ動物種単位の新たなクラスの実装を試みる．これまでの <code class="docutils literal notranslate"><span class="pre">Animal</span></code> クラスは動物種を示す <code class="docutils literal notranslate"><span class="pre">species</span></code> 変数を持っていた．鳴き声は動物種ごとに異なるので <code class="docutils literal notranslate"><span class="pre">Animal</span></code> クラス内でインスタンスメソッドを複数定義するのではなく，動物種単位で新たにクラスを設計することが望ましい．</p>
+<p>そこで，まずは動物種を引数として受け取っていた <code class="docutils literal notranslate"><span class="pre">Animal</span></code> クラスを修正して，継承用に再定義する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Animal</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        
+    <span class="k">def</span> <span class="nf">print_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s1">です．&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>クラスの設計段階で定義したいメソッドなどは上記のように <strong>何もしない関数</strong> である <code class="docutils literal notranslate"><span class="pre">pass</span></code> を用いて定義しておくと良い．</p>
+<p>では新たに定義した <code class="docutils literal notranslate"><span class="pre">Animal</span></code> クラスを継承し，犬クラス（<code class="docutils literal notranslate"><span class="pre">Dog</span></code>）と猫クラス（<code class="docutils literal notranslate"><span class="pre">Cat</span></code>）を定義する．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Dog</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span> <span class="c1"># 継承するクラスを指定</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="c1"># 継承するクラスの __init__ を呼び出す</span>
+
+    <span class="k">def</span> <span class="nf">sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># 犬の鳴き声メソッド</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ワンワン&#39;</span><span class="p">)</span>
+    
+
+<span class="k">class</span> <span class="nc">Cat</span><span class="p">(</span><span class="n">Animal</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
+        
+    <span class="k">def</span> <span class="nf">sound</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span> <span class="c1"># 猫の鳴き声メソッド</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;ニャア&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>まず，継承の利点を理解するために，<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスを再利用して作成した<code class="docutils literal notranslate"><span class="pre">Dog,</span> <span class="pre">Cat</span></code>クラスには<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスで定義されたインスタンス変数（<code class="docutils literal notranslate"><span class="pre">name</span></code>）とインスタンスメソッド（<code class="docutils literal notranslate"><span class="pre">print_data</span></code>）が利用できることを確認されたい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;ガウス&#39;</span><span class="p">),</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;オイラー&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">zoo</span><span class="p">:</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ガウスです．
+オイラーです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>このようにインスタンス変数の代入やインスタンスメソッドを再定義することなく継承元の機能を利用できる継承の利点を確認できたかと思う．</p>
+<p>続いて，<code class="docutils literal notranslate"><span class="pre">Dog,</span> <span class="pre">Cat</span></code>クラスを作成するときに再定義したメソッド（<code class="docutils literal notranslate"><span class="pre">sound</span></code>）を呼び出す．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">zoo</span> <span class="o">=</span> <span class="p">[</span><span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;ガウス&#39;</span><span class="p">),</span> <span class="n">Cat</span><span class="p">(</span><span class="s1">&#39;オイラー&#39;</span><span class="p">)]</span>
+
+<span class="k">for</span> <span class="n">animal</span> <span class="ow">in</span> <span class="n">zoo</span><span class="p">:</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+    <span class="n">animal</span><span class="o">.</span><span class="n">sound</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="c1"># 改行用のprint</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ガウスです．
+ワンワン
+
+オイラーです．
+ニャア
+</pre></div>
+</div>
+</div>
+</div>
+<p>以上より継承元のメソッドと新たに追加したメソッドの両方を呼び出せることが確認できた．継承を利用することで継承元のクラス（<code class="docutils literal notranslate"><span class="pre">Animal</span></code>）を修正することで継承したクラス（<code class="docutils literal notranslate"><span class="pre">Dog,</span> <span class="pre">Cat</span></code>）のデータや機能を拡張できる．</p>
+<div class="admonition- admonition">
+<p class="admonition-title">オーバーライド</p>
+<p><code class="docutils literal notranslate"><span class="pre">sound</span></code>メソッドのように継承元のクラスの機能を上書きすることを <strong>オーバーライド</strong> と呼ぶ．</p>
+</div>
+<p>補足となるがこのようなクラス設計をしておくと，名前は違う別の犬を管理したいときも可読性が良い．以下のサンプルコードを確認されたい．</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;犬A&#39;</span><span class="p">)</span>
+<span class="n">another_dog</span> <span class="o">=</span> <span class="n">Dog</span><span class="p">(</span><span class="s1">&#39;犬B&#39;</span><span class="p">)</span>
+
+<span class="n">dog</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+<span class="n">another_dog</span><span class="o">.</span><span class="n">print_data</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>犬Aです．
+犬Bです．
+</pre></div>
+</div>
+</div>
+</div>
+<p>このように同一種（犬）の異なる犬（犬Aと犬B）を管理する場面では，リストよりもコードがわかりやすくなる．</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./docs/10"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../09/exercise_functions_and_scope.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">第9回：関数（演習）</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../11/exercise_class.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">第11回：クラス（演習）</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">内容</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">クラスとは？</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">クラスの利用場面</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">クラスの作成</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">インスタンス変数の作成</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id7">リストで学ぶインスタンス化</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id8">インスタンスメソッドの定義</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id9">インスタンスメソッドをクラス内で呼び出す</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id10">リストで学ぶインスタンスメソッド</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id11">【発展】 関数とインスタンスメソッドの違い</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id12">【発展】 リストによるクラスの管理</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id13">【発展】 クラスの継承</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Hiroaki Aizawa & Akira Furui
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024 (CC BY 4.0).
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
