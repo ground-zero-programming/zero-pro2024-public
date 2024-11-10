@@ -37,7 +37,7 @@
 | [第6回：繰り返し処理（講義）](docs/06/loops.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/Efn0HJbiNCNAr_W3PkKpEBkBWKhH9Xq-efOWb2AahHRbsQ) | - | - |
 | [第7回：繰り返し処理（演習）](docs/07/exercise_loops.ipynb)  | - | <del>10/31</del> | [Open](docs/07_ans/answer_loops.ipynb) |
 | [第8回：関数（講義）](docs/08/functions_and_scope.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/EQTxkkyhYWBOo-DoXJepy3IBYGp6qV_gXf-V_dHnYuFuHg) | - | - |
-| [第9回：関数（演習）](docs/09/exercise_functions_and_scope.ipynb) |- | 11/7 | 11/8公開 |
+| [第9回：関数（演習）](docs/09/exercise_functions_and_scope.ipynb) |- | <del>11/7</del> | [Open](docs/09_ans/answer_functions_and_scope.ipynb) |
 | [第10回：クラス（講義）](docs/10/class.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/EYuiwC6E6ShHr8cZpnYEr1QBaKiC8y2bIGFbHHY0CFGjbA) | - | - |
 | [第11回：クラス（演習）](docs/11/exercise_class.ipynb)  | - | 11/14 | 11/15公開 |
 | 第12回：データ分析入門（講義） | 準備中 | - | - |
