@@ -5,6 +5,8 @@
 担当教員：相澤宏旭，古居彬
 
 ````{card} お知らせ
+- [【重要】期末試験に関する情報](docs/exam.md) を追加しました（2024/11/11）
+- 第12回〜15回までの資料を一括公開しました．課題の締切も同日なので，注意してください（2024/11/11）
 - 本ページを公開しました（2024/09/27）
 ````
 
@@ -20,7 +22,7 @@
 - Microsoft Teams上に各クラスのチームが作成されています．
   - Teamsでは，講義内容に関する質問対応や，課題提出などを行います．
 - 期末試験はTeams上で行います．
-  - 期末試験の情報は試験日程が近づいたら記載します
+  - 受験は必須です．必ず詳細を確認のうえ期間中に受験してください（→ [期末試験に関する情報](docs/exam.md)）．
 
 ## 講義資料
 
@@ -40,10 +42,10 @@
 | [第9回：関数（演習）](docs/09/exercise_functions_and_scope.ipynb) |- | <del>11/7</del> | [Open](docs/09_ans/answer_functions_and_scope.ipynb) |
 | [第10回：クラス（講義）](docs/10/class.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/EYuiwC6E6ShHr8cZpnYEr1QBaKiC8y2bIGFbHHY0CFGjbA) | - | - |
 | [第11回：クラス（演習）](docs/11/exercise_class.ipynb)  | - | 11/14 | 11/15公開 |
-| 第12回：データ分析入門（講義） | 準備中 | - | - |
-| 第13回：データ分析入門（演習）  | - | 11/28 | 11/29公開 |
-| 第14回：機械学習入門（講義） | 準備中 | - | - |
-| 第15回：機械学習入門（演習）  | - | 11/28 | 11/29公開 |
+| [第12回：データ分析入門（講義）](docs/12/introduction_to_data_analysis.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/EUCcEhx8-BZGpOR65IGiYqsBmguwLUVXcm3yHdOyJW0Qbw) | - | - |
+| [第13回：データ分析入門（演習）](docs/13/exercise_introduction_to_data_analysis.ipynb)  | - | 11/28 | 11/29公開 |
+| [第14回：機械学習入門（講義）](docs/14/introduction_to_machine_learning.ipynb) | [Play](https://hiroshimauniv-my.sharepoint.com/:v:/g/personal/furui_hiroshima-u_ac_jp/ES6Fanh2ZVdPrmBPK6rpB_IBXL8slC-VfZHhahXdU-Stuw) | - | - |
+| [第15回：機械学習入門（演習）](docs/15/exercise_introduction_to_machine_learning.ipynb)  | - | 11/28 | 11/29公開 |
 
 ## 講義スケジュール
 
@@ -80,7 +82,8 @@
 ## 成績評価
 
 - 毎週の課題提出状況と，期末試験の成績を踏まえて総合的に評価します．
-- 期末試験の詳細は試験日程が近づいたら記載します．
+- <del>期末試験の詳細は試験日程が近づいたら記載します．</del>
+- 期末試験の詳細は [こちら](docs/exam.md) を確認してください．
 
 
 ## 開講情報

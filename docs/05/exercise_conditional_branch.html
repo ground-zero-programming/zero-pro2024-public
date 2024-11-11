@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>第5回：条件分岐（演習） &#8212; ゼロから始めるプログラミング</title>
   
@@ -14,49 +15,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/05/exercise_conditional_branch';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -71,23 +76,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,20 +119,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -137,13 +139,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
-  
   
   
   
@@ -153,23 +151,12 @@
       
     
     
-    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
-    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -192,9 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../09/exercise_functions_and_scope.html">第9回：関数（演習）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10/class.html">第10回：クラス（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/exercise_class.html">第11回：クラス（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/introduction_to_data_analysis.html">第12回：データ分析入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/exercise_introduction_to_data_analysis.html">第13回：データ分析入門（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14/introduction_to_machine_learning.html">第14回：機械学習入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/exercise_introduction_to_machine_learning.html">第15回：機械学習入門（演習）</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">期末試験に関する情報</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../submission/submission.html">課題提出方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
@@ -213,7 +205,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -222,14 +214,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -254,14 +246,14 @@
       
       <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/05/exercise_conditional_branch.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -382,28 +374,26 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -469,17 +459,17 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第5回：条件分岐（演習）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1>第5回：条件分岐（演習）<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>学籍番号：…</p>
 <p>氏名：…</p>
 <hr class="docutils" />
 <section id="id2">
-<h2>演習1：真偽値と条件式<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>演習1：真偽値と条件式<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <section id="id3">
-<h3>例題<a class="headerlink" href="#id3" title="Link to this heading">#</a></h3>
+<h3>例題<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> は <code class="docutils literal notranslate"><span class="pre">y</span></code> より小さい」を，比較演算子を用いて記述せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
@@ -500,7 +490,7 @@ document.write(`
 </div>
 </section>
 <section id="id4">
-<h3>演習1-1<a class="headerlink" href="#id4" title="Link to this heading">#</a></h3>
+<h3>演習1-1<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
 <p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> は <code class="docutils literal notranslate"><span class="pre">y</span></code> より大きい」を，比較演算子を用いて記述せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
@@ -512,7 +502,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h3>演習1-2<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3>演習1-2<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> は <code class="docutils literal notranslate"><span class="pre">y</span></code> の2倍より大きい」を，比較演算子を用いて記述せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
@@ -524,7 +514,7 @@ document.write(`
 </div>
 </section>
 <section id="id6">
-<h3>演習1-3<a class="headerlink" href="#id6" title="Link to this heading">#</a></h3>
+<h3>演習1-3<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h3>
 <p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> は <code class="docutils literal notranslate"><span class="pre">y</span></code> と等しくない」を，比較演算子を用いて記述せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
@@ -536,7 +526,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h3>演習1-4<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<h3>演習1-4<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> は <code class="docutils literal notranslate"><span class="pre">y</span></code> 以上である」を，比較演算子を用いて記述せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> にはあらかじめ条件式が「<code class="docutils literal notranslate"><span class="pre">True</span></code>」となる適当な数値を代入しておくこと．</p>
 <div class="cell docutils container">
@@ -548,7 +538,7 @@ document.write(`
 </div>
 </section>
 <section id="id8">
-<h3>演習1-5<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<h3>演習1-5<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>「リスト <code class="docutils literal notranslate"><span class="pre">[2,</span> <span class="pre">4,</span> <span class="pre">6,</span> <span class="pre">8,</span> <span class="pre">10]</span></code> の中に <code class="docutils literal notranslate"><span class="pre">6</span></code> が含まれているか？」を比較演算子を用いて記述せよ．</p>
 <p><strong>出力例</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
@@ -563,11 +553,11 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>演習1-6<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<h3>演習1-6<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>「文字列 <code class="docutils literal notranslate"><span class="pre">programming</span></code> の長さが10文字以上か？」を，比較演算子を用いて記述せよ．</p>
 <p><strong>ヒント</strong></p>
 <p>文字列の長さを取得するには，どうすればよかったか思い出そう．
-忘れた人は，<a class="reference internal" href="../02/variables_and_data_types.html"><span class="std std-doc">前回の教材</span></a> を確認されたい．</p>
+忘れた人は，<a class="reference internal" href="../02/variables_and_data_types.html"><span class="doc std std-doc">前回の教材</span></a> を確認されたい．</p>
 <p><strong>出力例</strong></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
 </pre></div>
@@ -582,9 +572,9 @@ document.write(`
 </section>
 </section>
 <section id="if">
-<h2>演習2：<code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Link to this heading">#</a></h2>
+<h2>演習2：<code class="docutils literal notranslate"><span class="pre">if</span></code>文<a class="headerlink" href="#if" title="Permalink to this heading">#</a></h2>
 <section id="id10">
-<h3>演習2-1<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<h3>演習2-1<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">temperature</span></code> の値が <code class="docutils literal notranslate"><span class="pre">30</span></code> 以上の場合、「暑いです」と表示するプログラムを書け．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">temperature</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
@@ -596,7 +586,7 @@ document.write(`
 </div>
 </section>
 <section id="id11">
-<h3>演習2-2<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<h3>演習2-2<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>文字列の変数 <code class="docutils literal notranslate"><span class="pre">password</span></code> の長さが8文字未満の場合、「パスワードが短すぎます」と表示するプログラムを書け．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">password</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
@@ -609,14 +599,14 @@ document.write(`
 </section>
 </section>
 <section id="if-else">
-<h2>演習3：<code class="docutils literal notranslate"><span class="pre">if　...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-else" title="Link to this heading">#</a></h2>
+<h2>演習3：<code class="docutils literal notranslate"><span class="pre">if　...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h2>
 <section id="id12">
-<h3>演習3-1<a class="headerlink" href="#id12" title="Link to this heading">#</a></h3>
+<h3>演習3-1<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">a</span></code> の値が <code class="docutils literal notranslate"><span class="pre">3</span></code> で割り切れるときは「<code class="docutils literal notranslate"><span class="pre">3で割り切れます</span></code>」，そうでないときには「<code class="docutils literal notranslate"><span class="pre">3で割り切れません</span></code>」と表示するプログラムを作成せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">a</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <p><strong>ヒント</strong></p>
 <p>「割り切れる」を表現するためには，<code class="docutils literal notranslate"><span class="pre">a</span></code> を <code class="docutils literal notranslate"><span class="pre">3</span></code> で割った余りが <code class="docutils literal notranslate"><span class="pre">0</span></code> と等しくなればよい．
-余りの計算方法は <a class="reference internal" href="../01/introduction_and_setup.html"><span class="std std-doc">第1回</span></a> または <a class="reference internal" href="../02/variables_and_data_types.html"><span class="std std-doc">第2回</span></a> の教材を参照されたい．</p>
+余りの計算方法は <a class="reference internal" href="../01/introduction_and_setup.html"><span class="doc std std-doc">第1回</span></a> または <a class="reference internal" href="../02/variables_and_data_types.html"><span class="doc std std-doc">第2回</span></a> の教材を参照されたい．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 解答用セル</span>
@@ -626,7 +616,7 @@ document.write(`
 </div>
 </section>
 <section id="id13">
-<h3>演習3-2<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<h3>演習3-2<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">score</span></code> の値が <code class="docutils literal notranslate"><span class="pre">60</span></code> 以上の場合は「合格」，そうでない場合は「不合格」と表示するプログラムを作成せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">score</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
@@ -639,9 +629,9 @@ document.write(`
 </section>
 </section>
 <section id="if-elif-else">
-<h2>演習4：<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">elif</span> <span class="pre">...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-elif-else" title="Link to this heading">#</a></h2>
+<h2>演習4：<code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">elif</span> <span class="pre">...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h2>
 <section id="id14">
-<h3>演習4-1<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<h3>演習4-1<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>参加者の年齢に応じて，適切な入場料金を表示するプログラムを考える．
 ここでは，3歳児以下は無料，15歳児以下は子供料金，そうでなければ大人料金となるとする．</p>
 <p>年齢を表す変数 <code class="docutils literal notranslate"><span class="pre">age</span></code> の値が <code class="docutils literal notranslate"><span class="pre">3</span></code> 以下であれば「<code class="docutils literal notranslate"><span class="pre">入場料は無料です</span></code>」，<code class="docutils literal notranslate"><span class="pre">15</span></code> 以下であれば「<code class="docutils literal notranslate"><span class="pre">子供料金が必要です</span></code>」，そうでなければ「<code class="docutils literal notranslate"><span class="pre">大人料金が必要です</span></code>」と表示するプログラムを作成せよ．
@@ -655,7 +645,7 @@ document.write(`
 </div>
 </section>
 <section id="id15">
-<h3>演習4-2<a class="headerlink" href="#id15" title="Link to this heading">#</a></h3>
+<h3>演習4-2<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h3>
 <p>BMI（体格指数）に基づいて体型を判定するプログラムを作成せよ．
 BMIは体重(kg) / (身長(m)の2乗)で計算される．
 判定基準は以下の通り：</p>
@@ -675,9 +665,9 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </section>
 </section>
 <section id="id16">
-<h2>演習5：複数条件の組み合わせ<a class="headerlink" href="#id16" title="Link to this heading">#</a></h2>
+<h2>演習5：複数条件の組み合わせ<a class="headerlink" href="#id16" title="Permalink to this heading">#</a></h2>
 <section id="id17">
-<h3>演習5-1<a class="headerlink" href="#id17" title="Link to this heading">#</a></h3>
+<h3>演習5-1<a class="headerlink" href="#id17" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> の値が「0でなく」かつ「2で割り切れる」場合のみ「<code class="docutils literal notranslate"><span class="pre">条件に合致します</span></code>」と表示し，そうでない場合に「<code class="docutils literal notranslate"><span class="pre">条件に合致しません</span></code>」と表示するプログラムを作成せよ．
 なお，変数 <code class="docutils literal notranslate"><span class="pre">x</span></code> には適当な値を代入しておき，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
@@ -689,7 +679,7 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </div>
 </section>
 <section id="id18">
-<h3>演習5-2<a class="headerlink" href="#id18" title="Link to this heading">#</a></h3>
+<h3>演習5-2<a class="headerlink" href="#id18" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">day</span></code> を用いて，平日（ <code class="docutils literal notranslate"><span class="pre">&quot;Monday&quot;</span></code> から <code class="docutils literal notranslate"><span class="pre">&quot;Friday&quot;</span></code>）であれば「仕事です」，
 <code class="docutils literal notranslate"><span class="pre">&quot;Saturday&quot;</span></code> か <code class="docutils literal notranslate"><span class="pre">&quot;Sunday&quot;</span></code> であれば「休日です」と表示するプログラムを作成せよ．</p>
 <p>なお，変数 <code class="docutils literal notranslate"><span class="pre">day</span></code> には適当な曜日（文字列）を代入しておき，プログラムの実行結果も表示せよ．</p>
@@ -703,11 +693,11 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </section>
 </section>
 <section id="id19">
-<h2>演習6：発展課題<a class="headerlink" href="#id19" title="Link to this heading">#</a></h2>
+<h2>演習6：発展課題<a class="headerlink" href="#id19" title="Permalink to this heading">#</a></h2>
 <p>これ以降は発展的な演習課題となります．
 解くことは必須ではありませんが，条件分岐を応用する良い練習になるので，ぜひチャレンジしてみてください．</p>
 <section id="fizzbuzz">
-<h3>演習6-1：FizzBuzz問題<a class="headerlink" href="#fizzbuzz" title="Link to this heading">#</a></h3>
+<h3>演習6-1：FizzBuzz問題<a class="headerlink" href="#fizzbuzz" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> の値に対し，次のことを出力せよ．</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> で割り切れて <code class="docutils literal notranslate"><span class="pre">5</span></code> で割り切れないときは「<code class="docutils literal notranslate"><span class="pre">Fizz</span></code>」と出力</p></li>
@@ -725,7 +715,7 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </div>
 </section>
 <section id="id20">
-<h3>演習6-2：3の倍数と3のつく数<a class="headerlink" href="#id20" title="Link to this heading">#</a></h3>
+<h3>演習6-2：3の倍数と3のつく数<a class="headerlink" href="#id20" title="Permalink to this heading">#</a></h3>
 <p>変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> の値に対し，3の倍数と3のつく数の時だけ「3に関する数です」と出力するプログラムを作成せよ．なお，変数 <code class="docutils literal notranslate"><span class="pre">number</span></code> には適当な値を代入し，プログラムの実行結果も表示せよ．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -736,7 +726,7 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
 </div>
 </section>
 <section id="id21">
-<h3>演習6-3：簡易電卓<a class="headerlink" href="#id21" title="Link to this heading">#</a></h3>
+<h3>演習6-3：簡易電卓<a class="headerlink" href="#id21" title="Permalink to this heading">#</a></h3>
 <p>二つの数値 <code class="docutils literal notranslate"><span class="pre">a</span></code>，<code class="docutils literal notranslate"><span class="pre">b</span></code> と，演算子 <code class="docutils literal notranslate"><span class="pre">operator</span></code>（<code class="docutils literal notranslate"><span class="pre">+</span></code>, <code class="docutils literal notranslate"><span class="pre">-</span></code>, <code class="docutils literal notranslate"><span class="pre">*</span></code>, <code class="docutils literal notranslate"><span class="pre">/</span></code> のいずれか）を入力として受け取り，
 指定された演算を行う簡易電卓プログラムを作成せよ．
 ただし，0での除算の場合は「0で割ることはできません」と表示すること．</p>
@@ -779,8 +769,8 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../04/conditional_branch.html"
@@ -808,7 +798,6 @@ BMIは体重(kg) / (身長(m)の2乗)で計算される．
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -873,7 +862,6 @@ By Hiroaki Aizawa & Akira Furui
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2024 (CC BY 4.0).
@@ -900,8 +888,8 @@ By Hiroaki Aizawa & Akira Furui
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>第6回：繰り返し処理（講義） &#8212; ゼロから始めるプログラミング</title>
   
@@ -14,49 +15,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/06/loops';</script>
@@ -73,23 +78,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,20 +121,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,13 +141,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
-  
   
   
   
@@ -155,23 +153,12 @@
       
     
     
-    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
-    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,9 +181,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../09/exercise_functions_and_scope.html">第9回：関数（演習）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10/class.html">第10回：クラス（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/exercise_class.html">第11回：クラス（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/introduction_to_data_analysis.html">第12回：データ分析入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/exercise_introduction_to_data_analysis.html">第13回：データ分析入門（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14/introduction_to_machine_learning.html">第14回：機械学習入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/exercise_introduction_to_machine_learning.html">第15回：機械学習入門（演習）</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">期末試験に関する情報</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../submission/submission.html">課題提出方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
@@ -215,7 +207,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -224,14 +216,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -256,14 +248,14 @@
       
       <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/06/loops.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -384,28 +376,26 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -452,13 +442,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第6回：繰り返し処理（講義）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1>第6回：繰り返し処理（講義）<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>担当：相澤宏旭</p>
 <section id="id2">
-<h2>内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>内容<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>第6回 繰り返し処理では，ある処理を条件式に基づき繰り返す処理について学ぶ．プログラムにおいて繰り返し処理はリストなど複数のデータ値を持つ変数に対する演算処理，ユーザ入力の待機時間の実装など様々な場面で利用される．さらに，第4回で学んだ条件分岐と組み合わせることで，指定した条件が満たされたとき繰り返し処理を停止させたりするなど，処理をより複雑に制御できるようになる．このような処理を実現するために，Pythonでは <code class="docutils literal notranslate"><span class="pre">for</span></code>文や<code class="docutils literal notranslate"><span class="pre">while</span></code>文がサポートされている．具体的に，これらの文法について以下を学ぶ．</p>
 <ul class="simple">
 <li><p>一定回数繰り返すまたは条件に応じて処理を反復するための，<code class="docutils literal notranslate"><span class="pre">for</span></code>文と<code class="docutils literal notranslate"><span class="pre">while</span></code>文の基本文法を理解する．</p></li>
@@ -467,12 +457,12 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>繰り返し処理とは？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>繰り返し処理とは？<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>繰り返し処理とは，言葉の通り，ある処理を複数回繰り返す処理である．前述したように，繰り返し処理によって，特定の処理を複数回反復することができ，また条件分岐と繰り返し処理を組み合わせることで，より複雑なプログラムを実装することができる．何より，繰り返し処理によって，複数回同じプログラムを記述する必要がなくなるため，コードの可読性を改善し，コード量も減らすことができる．</p>
 <p>では，以降で繰り返し処理の問題場面を確認しよう．</p>
 </section>
 <section id="id4">
-<h2>繰り返し処理の利用場面<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>繰り返し処理の利用場面<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>第2回の講義で学んだリストの各要素に対して何らかの処理を加えて<code class="docutils literal notranslate"><span class="pre">print</span></code>で出力する場面を考える．例えば，以下のような曜日の文字列が格納されたリストを与えられ，<code class="docutils literal notranslate"><span class="pre">今日は...です</span></code>と要素を出力することを考える．このとき繰り返し処理を利用しなければ，以下のようなインデックスによる出力方法が考えられる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -540,7 +530,7 @@ document.write(`
 <p>が挙げられる．このような問題をスマートに解決する方法が繰り返し処理である．</p>
 </section>
 <section id="for">
-<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>文<a class="headerlink" href="#for" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>文<a class="headerlink" href="#for" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/for.png" /></p>
 <p>前述した例のように，リストの各要素に対して順番に処理を適用したいとき，そのような場面で利用されるのが <code class="docutils literal notranslate"><span class="pre">for</span></code>文である．一般的な <code class="docutils literal notranslate"><span class="pre">for</span></code>文の構文は以下である．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">要素を保存する仮変数</span> <span class="ow">in</span> <span class="n">リスト</span><span class="p">:</span>
@@ -625,7 +615,7 @@ document.write(`
 <p>発展的な内容であるが<code class="docutils literal notranslate"><span class="pre">for</span></code>文などの繰り返し処理に利用できるオブジェクトは<strong>イテラブル</strong>オブジェクト（itarable object）と呼ばれる．イテラブルオブジェクトとして代表的なデータ型はリスト，タプル，辞書，文字列である．これらのオブジェクトは<code class="docutils literal notranslate"><span class="pre">for</span></code>文で上記のように利用できる．一方で，数値データや論理値はイテラブルでないオブジェクトである．</p>
 </div>
 <section id="range">
-<h3><code class="docutils literal notranslate"><span class="pre">range</span></code>関数<a class="headerlink" href="#range" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">range</span></code>関数<a class="headerlink" href="#range" title="Permalink to this heading">#</a></h3>
 <p>前述の<code class="docutils literal notranslate"><span class="pre">for</span></code>文の例では，繰り返し処理のために曜日や集合の要素が格納されたリストを予め作成する必要があった．</p>
 <p>しかしながら，例えば，<span class="math notranslate nohighlight">\(1000\)</span>回繰り返し処理をしたいとき，<span class="math notranslate nohighlight">\(1000\)</span>個の値が格納されたリスト</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">num_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="o">...</span><span class="p">,</span> <span class="mi">999</span><span class="p">]</span>
@@ -774,7 +764,7 @@ document.write(`
 </section>
 </section>
 <section id="while">
-<h2><code class="docutils literal notranslate"><span class="pre">while</span></code>文<a class="headerlink" href="#while" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">while</span></code>文<a class="headerlink" href="#while" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/while.png" /></p>
 <p>Pythonでは<code class="docutils literal notranslate"><span class="pre">for</span></code>文以外にもいくつかの繰り返し処理が実装されている．その中でも代表的な繰り返し処理が条件式が<code class="docutils literal notranslate"><span class="pre">True</span></code>である間，処理を繰り返す<code class="docutils literal notranslate"><span class="pre">while</span></code>文である．条件式については<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/04/conditional_branch.html#id4">第4回 条件分岐</a>を参照されたい．</p>
 <p><code class="docutils literal notranslate"><span class="pre">while</span></code>文の構文は以下である．</p>
@@ -816,7 +806,7 @@ document.write(`
 </div>
 </section>
 <section id="break">
-<h2><code class="docutils literal notranslate"><span class="pre">break</span></code>文による繰り返しの終了<a class="headerlink" href="#break" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">break</span></code>文による繰り返しの終了<a class="headerlink" href="#break" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/break.png" /></p>
 <p><code class="docutils literal notranslate"><span class="pre">for/while</span></code>文で，繰り返し（<strong>ループ</strong>）を中断したいとき，<code class="docutils literal notranslate"><span class="pre">break</span></code>文を使用する．これによって，前述の無限ループのように「Ctrl+C」や「Interrupt」ボタンを押すことなく，無限ループを強制的に終了させることができる．</p>
 <p><code class="docutils literal notranslate"><span class="pre">break</span></code>文は，例えば，何回繰り返すか決まっていない繰り返しで，ある条件式が満たされたら繰り返しを終了させたい場面で有効である．一般的に，以下のように利用される．</p>
@@ -862,7 +852,7 @@ document.write(`
 </div>
 </section>
 <section id="continue">
-<h2><code class="docutils literal notranslate"><span class="pre">continue</span></code>文による次の繰り返しの開始<a class="headerlink" href="#continue" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">continue</span></code>文による次の繰り返しの開始<a class="headerlink" href="#continue" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/continue.png" /></p>
 <p><code class="docutils literal notranslate"><span class="pre">continue</span></code>文は，繰り返しを終了することなく，その後の処理をスキップして次の繰り返しに進むことができる．条件式を満たすとき，処理1を実行するが，処理2は実行しない繰り返し文を実行したいとき以下のように<code class="docutils literal notranslate"><span class="pre">continue</span></code>を利用する．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">繰り返しの条件式</span><span class="p">:</span>
@@ -922,7 +912,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>文によるリストの作成<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">for</span></code>文によるリストの作成<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p>繰り返し処理はリストの作成にも利用できる．</p>
 <p>具体的に，空のリストに<code class="docutils literal notranslate"><span class="pre">append</span></code>関数を使って<code class="docutils literal notranslate"><span class="pre">for</span></code>文と<code class="docutils literal notranslate"><span class="pre">range</span></code>関数による繰り返し処理から得られる数値を追加することでリストを作成できる．</p>
 <p>以下に<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(9\)</span>までの計10個の要素を持つリストを<code class="docutils literal notranslate"><span class="pre">for</span></code>文を利用するコードを示す．</p>
@@ -965,7 +955,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="id6">
-<h2>【発展】多重ループ<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2>【発展】多重ループ<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">for</span></code>文の応用として，複数のオブジェクトの要素を繰り返す<strong>多重ループ</strong>がある．多重ループは<strong>ネストループ</strong>とも呼ばれ，2重だけでなく3重以上のループも実装できる．このような多重ループは，例えば，2つの要素集合のリスト間の組み合わせを出力する場面で利用できる．</p>
 <p>以下は集合<span class="math notranslate nohighlight">\(A=\{a,b,c\}\)</span>と集合<span class="math notranslate nohighlight">\(B=\{x,y,z\}\)</span>間の組み合わせ出力する多重ループのサンプルコードである．各集合はリストとして実装し，2重ループとして，各組み合わせを<code class="docutils literal notranslate"><span class="pre">print</span></code>文で出力する．</p>
 <div class="cell docutils container">
@@ -999,7 +989,7 @@ c z
 </div>
 </section>
 <section id="id7">
-<h2>【発展】イテレータ<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2>【発展】イテレータ<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>厳密にはPythonにおいて<code class="docutils literal notranslate"><span class="pre">range</span></code>関数は <strong>イテレータ</strong> と呼ばれる仕組みである．イテレータは次の要素を順番に取り出し，読み出し可能な要素がなくなったときに終了変数を返すような機能を持つ．</p>
 <p><code class="docutils literal notranslate"><span class="pre">range</span></code>関数を<code class="docutils literal notranslate"><span class="pre">print</span></code>してみるとリストのように中身の要素が出力されないことに注意されたい．</p>
 <div class="cell docutils container">
@@ -1084,7 +1074,7 @@ c z
 </div>
 </section>
 <section id="enumerate">
-<h2>【発展】<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>関数<a class="headerlink" href="#enumerate" title="Link to this heading">#</a></h2>
+<h2>【発展】<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>関数<a class="headerlink" href="#enumerate" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">enumerate</span></code>関数は<code class="docutils literal notranslate"><span class="pre">for</span></code>文や<code class="docutils literal notranslate"><span class="pre">while</span></code>文と同様に繰り返し処理のためのPythonの組み込み関数である．<code class="docutils literal notranslate"><span class="pre">enumerate</span></code>関数はループの回数（=要素の数）をカウントする利用場面で便利である．その具体例を以下のセルに示す．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1143,7 +1133,7 @@ c z
 </div>
 </section>
 <section id="zip">
-<h2>【発展】<code class="docutils literal notranslate"><span class="pre">zip</span></code>関数<a class="headerlink" href="#zip" title="Link to this heading">#</a></h2>
+<h2>【発展】<code class="docutils literal notranslate"><span class="pre">zip</span></code>関数<a class="headerlink" href="#zip" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">zip</span></code>関数は複数の反復可能なオブジェクトの繰り返し処理をしたいときに便利である．多重ループでの例のように，集合 <span class="math notranslate nohighlight">\(A=\{a,b,c\}\)</span> と集合 <span class="math notranslate nohighlight">\(B=\{x,y,z\}\)</span> について各要素を順番に取り出す処理を考える．望まれる出力は以下である．</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="n">x</span>
 <span class="n">b</span> <span class="n">y</span>
@@ -1217,7 +1207,7 @@ c z
 </div>
 </section>
 <section id="id8">
-<h2>【発展】辞書と<code class="docutils literal notranslate"><span class="pre">for</span></code>文<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<h2>【発展】辞書と<code class="docutils literal notranslate"><span class="pre">for</span></code>文<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>辞書を用いた繰り返し処理を紹介する．これまではリスト型を中心に繰り返し処理を説明したが，ここでは，辞書を用いた繰り返し処理を紹介する．<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/02/variables_and_data_types.html#id31">第2回の講義</a>で説明したように，辞書は変数<code class="docutils literal notranslate"><span class="pre">key</span></code>に基づいて値<code class="docutils literal notranslate"><span class="pre">value</span></code>を参照するデータ型である．辞書は反復可能なイテラブルなデータ型であるため，<code class="docutils literal notranslate"><span class="pre">len</span></code>関数がサポートされているが，リストのように要素の順番を示すインデックス変数<code class="docutils literal notranslate"><span class="pre">i</span></code>を利用した参照ができない．このような辞書型であってもシンプルかつ効果的に繰り返し処理をするための関数が提供されている．</p>
 <p>以降のセルでは第2回の講義で紹介した辞書の値のみ，キーワードのみ，またはその両方を取得する関数を復習し，<code class="docutils literal notranslate"><span class="pre">for</span></code>文による繰り返し処理を紹介する．</p>
 <div class="cell docutils container">
@@ -1283,7 +1273,7 @@ key3 3
 </div>
 </section>
 <section id="id9">
-<h2>【発展】内包表記<a class="headerlink" href="#id9" title="Link to this heading">#</a></h2>
+<h2>【発展】内包表記<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h2>
 <p>前述した<code class="docutils literal notranslate"><span class="pre">for</span></code>文によるリストの作成は便利であるが，コードはやや煩雑となる．Pythonでは<strong>内包表記</strong>と呼ばれる文法が定義されており，非常にシンプルかつ高速にリストの作成ができる．以下に，<span class="math notranslate nohighlight">\(0\)</span>から<span class="math notranslate nohighlight">\(9\)</span>までの計10個の要素を持つリストを内包表記で作成するコードを示す．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1356,8 +1346,8 @@ key3 3
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../05/exercise_conditional_branch.html"
@@ -1385,7 +1375,6 @@ key3 3
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1431,7 +1420,6 @@ By Hiroaki Aizawa & Akira Furui
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2024 (CC BY 4.0).
@@ -1458,8 +1446,8 @@ By Hiroaki Aizawa & Akira Furui
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>第10回：クラス（講義） &#8212; ゼロから始めるプログラミング</title>
   
@@ -14,49 +15,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/10/class';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -71,23 +76,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -109,20 +119,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -137,13 +139,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
-  
   
   
   
@@ -153,23 +151,12 @@
       
     
     
-    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
-    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -192,9 +179,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../09/exercise_functions_and_scope.html">第9回：関数（演習）</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">第10回：クラス（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/exercise_class.html">第11回：クラス（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/introduction_to_data_analysis.html">第12回：データ分析入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/exercise_introduction_to_data_analysis.html">第13回：データ分析入門（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14/introduction_to_machine_learning.html">第14回：機械学習入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/exercise_introduction_to_machine_learning.html">第15回：機械学習入門（演習）</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">期末試験に関する情報</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../submission/submission.html">課題提出方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
@@ -213,7 +205,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -222,14 +214,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -254,14 +246,14 @@
       
       <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/10/class.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -382,28 +374,26 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -449,13 +439,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第10回：クラス（講義）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1>第10回：クラス（講義）<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>担当：相澤宏旭</p>
 <section id="id2">
-<h2>内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>内容<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>第10回目の講義では，Pythonだけでなくオブジェクト指向型プログラミング言語において重要なクラスの概念を学ぶ．クラスは関数以上に理解に手間取るプログラミングの仕組みであるが，使いこなすことができれば非常に便利な仕組みである．本講義では初めにクラスとは何か？関数との違いは？どのような場面で利用されるのか？について簡単に紹介したあと，クラスの作成方法やその機能を順番に解説する．具体的には，以下の項目について理解し，クラスを使いこなせることが本講義の目標である．</p>
 <ul class="simple">
 <li><p>クラスの定義方法，クラスとインスタンス化の概念を理解する．</p></li>
@@ -464,13 +454,13 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>クラスとは？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>クラスとは？<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/class_image.png" /></p>
 <p><strong>クラス（class）</strong> とはデータの値や処理の振る舞いのルールを記述できる仕組みである．クラスや振る舞いのルールを理解するために，図に示すような設計図をイメージされたい．私たちは何かモノを作るとき，モノの情報や作り方を決めた設計図を予め作成し，その設計図をもとにモノを作成する．例えば，カメラの場合だと，製品名，大きさ，デザイン，レンズ，写真の保存の仕方など製造するためのあらゆる情報が設計図には記載されている．そして，設計図からカメラを製造し，完成品ができる．クラスはこの一連の手順に含まれるモノの設計書としてイメージすると良い．そして，後述するが，Pythonでは設計図をもとに作成された完成品を <strong>インスタンス</strong> または <strong>オブジェクト</strong> といい，インスタンスを作成することを <strong>インスタンス化</strong> という．</p>
 <p>また，発展的な内容であるが，カメラの性能をアップデートしたり，デザインを変更した改良品の設計図を作成したい場合もある．Pythonでは，改良前の設計図をベースに新たな設計図を作成する <strong>継承</strong> という仕組みもサポートされている．クラスの簡単なイメージは以上であるが，厳密な定義や詳細な機能はゼロからはじめるプログラミングの内容を大幅に超えるため，本講義では，クラスがどのような場面で便利なのか？という視点から必要最低限の機能を紹介したい．</p>
 </section>
 <section id="id4">
-<h2>クラスの利用場面<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>クラスの利用場面<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p>次の機能を持つプログラムを作成する場面を想定されたい．あなたは動物園の管理者で動物種に基づいて名前，飼育場所，画像など飼育動物の情報をコンピュータで管理する必要がある．まず初めに，飼育されている犬のガウス，猫のオイラーについて動物種と名前を管理してみよう．</p>
 <p>このような複数データを扱う場合，リストが便利であった．</p>
 <div class="cell docutils container">
@@ -579,7 +569,7 @@ document.write(`
 </div>
 </section>
 <section id="id5">
-<h2>クラスの作成<a class="headerlink" href="#id5" title="Link to this heading">#</a></h2>
+<h2>クラスの作成<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/class.png" /></p>
 <p>クラスは以下の例ように <code class="docutils literal notranslate"><span class="pre">class</span></code> を使うと定義することができる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
@@ -616,7 +606,7 @@ document.write(`
 <p>上記のセルを実行すると，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>内の処理である <code class="docutils literal notranslate"><span class="pre">print('動物クラスを作成しました')</span></code> が呼び出されたことがわかる．前述したように，これは初期化メソッドと呼ばれる <code class="docutils literal notranslate"><span class="pre">__init__</span></code> による初期化処理がクラスからオブジェクトをインスタンス化したときに実行されたことを示している．</p>
 </section>
 <section id="id6">
-<h2>インスタンス変数の作成<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2>インスタンス変数の作成<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>続いて，<code class="docutils literal notranslate"><span class="pre">self</span></code>を理解するために，<code class="docutils literal notranslate"><span class="pre">Animal</span></code>クラスに動物種を追加してみる．以下のように，<code class="docutils literal notranslate"><span class="pre">__init__</span></code>を書き換えることで実装できる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
@@ -722,7 +712,7 @@ document.write(`
 <p>インスタンス変数は実行の手順からわかるように，<strong>インスタンス化</strong> されて初めてクラスに保存される変数である．また <code class="docutils literal notranslate"><span class="pre">__init__</span></code> 内部で <code class="docutils literal notranslate"><span class="pre">variable</span></code> と <code class="docutils literal notranslate"><span class="pre">self.variable</span></code> はそれぞれ引数によって与えられた変数，インスタンスが持つ変数であることに注意されたい．これらの変数は意味が異なるのである．</p>
 </div>
 <section id="id7">
-<h3>リストで学ぶインスタンス化<a class="headerlink" href="#id7" title="Link to this heading">#</a></h3>
+<h3>リストで学ぶインスタンス化<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h3>
 <p>クラスとインスタンスはプログラミング初学者にとって非常にわかりにくい概念である．よくある説明例としては，前述のようにクラスは設計図，インスタンスは設計図をもとに作成されたモノであるというものである．もし，この説明例で理解ができなかったとしても，利用するだけなら容易であるため心配は不要である．第2回で学んだ <strong>リスト</strong> を思い出してほしい．リストの作成は既にできるはずである．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -741,7 +731,7 @@ document.write(`
 </section>
 </section>
 <section id="id8">
-<h2>インスタンスメソッドの定義<a class="headerlink" href="#id8" title="Link to this heading">#</a></h2>
+<h2>インスタンスメソッドの定義<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h2>
 <p>前述のセルでは作成したインスタンスに対して <code class="docutils literal notranslate"><span class="pre">print</span></code> 文を呼び出した．データの管理はクラスによって容易になったが，処理・機能は不便なままである．そこで，クラスが持つ機能を新たに追加する．このクラスが持つ機能は <strong>インスタンスメソッド</strong> または <strong>インスタンス関数</strong> と呼ばれ，以下のように定義できる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">クラス名</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">variable</span><span class="p">):</span>
@@ -866,7 +856,7 @@ document.write(`
 <p>上記の<code class="docutils literal notranslate"><span class="pre">return</span></code>は<a class="reference external" href="https://ground-zero-programming.github.io/zero-pro2024-public/docs/08/functions_and_scope.html#id10">第8回 複数の戻り値</a>を利用せずに単一のリストで<code class="docutils literal notranslate"><span class="pre">return</span></code>している．タプルで複数の戻り値として実装することもできる．</p>
 </div>
 <section id="id9">
-<h3>インスタンスメソッドをクラス内で呼び出す<a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<h3>インスタンスメソッドをクラス内で呼び出す<a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>インスタンスメソッドもまたインスタンス変数と同じようにクラス内で呼び出すことができる．これは <code class="docutils literal notranslate"><span class="pre">self.インスタンスメソッド名(引数)</span></code>で実現できる．以下のコードを参考にされたい．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -906,7 +896,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">get_data</span></code>が呼び出されて，前述の例と同様の結果が得られたことがわかる．</p>
 </section>
 <section id="id10">
-<h3>リストで学ぶインスタンスメソッド<a class="headerlink" href="#id10" title="Link to this heading">#</a></h3>
+<h3>リストで学ぶインスタンスメソッド<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h3>
 <p>インスタンス化の項で既に学んだ <strong>リスト</strong> の実態はリストの挙動がまとめられたクラスからインスタンス化されたデータであると説明した．リストは以下で定義できた．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -960,7 +950,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="id11">
-<h2>【発展】 関数とインスタンスメソッドの違い<a class="headerlink" href="#id11" title="Link to this heading">#</a></h2>
+<h2>【発展】 関数とインスタンスメソッドの違い<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h2>
 <p>ここまでのインスタンスメソッドの定義方法と利用場面を理解できた受講者はおそらく「関数とインスタンスメソッドの違いってなんだろう？」と疑問に思うだろう．厳密な違いを理解するためには，<strong>オブジェクト指向プログラミング</strong> そのものの説明が必要であり，ゼロからはじめるプログラミングの内容を大きく超えてしまうのでここでは以下のサンプルコードからこの違いを簡単に説明したい．</p>
 <p>第8回の講義で学んだように関数は与えた入力に対してなんらかの処理をして出力する変換装置のイメージであった．上記の例と同様に， <code class="docutils literal notranslate"><span class="pre">{動物種}の{名前}です．</span></code> と <code class="docutils literal notranslate"><span class="pre">print</span></code> する関数を考える．</p>
 <div class="cell docutils container">
@@ -1007,7 +997,7 @@ document.write(`
 <p>また前述のリストで学ぶインスタンスメソッドを読むと，リストの要素を定義するインスタンス化の処理が必要であること，リストに新たな要素を追加する処理は関数よりもインスタンスメソッドとして定義されている方が便利であることがイメージできる．</p>
 </section>
 <section id="id12">
-<h2>【発展】 リストによるクラスの管理<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<h2>【発展】 リストによるクラスの管理<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <p>前述までのクラスの利用方法では，ある動物に対して新たな関数やデータを追加することは便利であるが，複数の動物を管理しようとしたとき，頭数分のインスタンスメソッドの呼び出しが必要となる．発展的なテクニックであるが，インスタンスをリストで管理するとループを使って便利に管理できる．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1057,7 +1047,7 @@ document.write(`
 <p>もちろんリストだけでなく辞書などの他のデータ型で管理しても良い．クラスのインスタンスを管理するクラスも考えることができる．管理する方法は作成したいアプリケーションの要件に依存するが，色々な実装を試してみると良い．</p>
 </section>
 <section id="id13">
-<h2>【発展】 クラスの継承<a class="headerlink" href="#id13" title="Link to this heading">#</a></h2>
+<h2>【発展】 クラスの継承<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h2>
 <p><img alt="" src="../../_images/inheritance.png" /></p>
 <p>これまでは新たな変数や機能を追加しようとしたとき，クラスの再定義が必要であった．Pythonを含むオブジェクト指向型言語には，クラスの機能を別のクラスで再利用する <strong>継承</strong> という仕組みが提供されている．ここでは，継承を利用して，クラスを再定義することなく，変数や機能を追加する方法について説明する．</p>
 <p>継承の方法は以下である．<code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">クラス名:</span></code>に継承するクラス名を与えると継承するクラスのインスタンスメソッドが利用できる．<code class="docutils literal notranslate"><span class="pre">super().__init__()</span></code>は継承するクラスの<code class="docutils literal notranslate"><span class="pre">__init__</span></code>関数を呼び出している．</p>
@@ -1208,8 +1198,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../09/exercise_functions_and_scope.html"
@@ -1237,7 +1227,6 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1282,7 +1271,6 @@ By Hiroaki Aizawa & Akira Furui
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2024 (CC BY 4.0).
@@ -1309,8 +1297,8 @@ By Hiroaki Aizawa & Akira Furui
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>

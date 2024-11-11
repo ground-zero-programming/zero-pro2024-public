@@ -1,12 +1,13 @@
 
+
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="../../" >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>第4回：条件分岐（講義） &#8212; ゼロから始めるプログラミング</title>
   
@@ -14,49 +15,53 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=ac02cc09edc035673794" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=ac02cc09edc035673794" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
-  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=ac02cc09edc035673794"></script>
 
-    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/04/conditional_branch';</script>
@@ -73,23 +78,28 @@
 
   
   
-  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
   
   <div id="pst-scroll-pixel-helper"></div>
+
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-primary-sidebar-checkbox"/>
-  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          id="pst-secondary-sidebar-checkbox"/>
-  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -111,20 +121,12 @@
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
-
-  <div class="pst-async-banner-revealer d-none">
-  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
-</div>
-
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
-    </header>
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
   
-
   <div class="bd-container">
     <div class="bd-container__inner bd-page-width">
-      
-      
       
       <div class="bd-sidebar-primary bd-sidebar">
         
@@ -139,13 +141,9 @@
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
-
-  
-    
   
 
 <a class="navbar-brand logo" href="../../intro.html">
-  
   
   
   
@@ -155,23 +153,12 @@
       
     
     
-    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="ゼロから始めるプログラミング - Home"/>
-    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="ゼロから始めるプログラミング - Home"/>`);</script>
+    <img src="../../_static/logo_dalle3.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo_dalle3.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
   
   
 </a></div>
-        <div class="sidebar-primary-item">
-
- <script>
- document.write(`
-   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
-    <span class="search-button__default-text">Search</span>
-    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
-   </button>
- `);
- </script></div>
-        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -194,9 +181,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../09/exercise_functions_and_scope.html">第9回：関数（演習）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../10/class.html">第10回：クラス（講義）</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../11/exercise_class.html">第11回：クラス（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../12/introduction_to_data_analysis.html">第12回：データ分析入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../13/exercise_introduction_to_data_analysis.html">第13回：データ分析入門（演習）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../14/introduction_to_machine_learning.html">第14回：機械学習入門（講義）</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/exercise_introduction_to_machine_learning.html">第15回：機械学習入門（演習）</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">補足情報</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../exam.html">期末試験に関する情報</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../submission/submission.html">課題提出方法</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../advanced_materials.html">さらに勉強したい人へ</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../references.html">参考文献</a></li>
@@ -215,7 +207,7 @@
 
       </div>
       
-      <main id="main-content" class="bd-main" role="main">
+      <main id="main-content" class="bd-main">
         
         
 
@@ -224,14 +216,14 @@
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article d-print-none">
+              <div class="bd-header-article">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</button></div>
+</label></div>
       
     </div>
   
@@ -256,14 +248,14 @@
       
       <li><a href="https://colab.research.google.com/github/ground-zero-programming/zero-pro2024-public/blob/main/docs/04/conditional_branch.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
-   title="Launch on Colab"
+   title="Launch onColab"
    data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
 <span class="btn__icon-container">
   
-    <img alt="Colab logo" src="../../_static/images/logo_colab.png">
+    <img src="../../_static/images/logo_colab.png">
   </span>
 <span class="btn__text-container">Colab</span>
 </a>
@@ -384,28 +376,26 @@
 </button>
 
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
-    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
-    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
-
 <script>
 document.write(`
-  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</button>
+</label>
 </div></div>
       
     </div>
@@ -463,13 +453,13 @@ document.write(`
               
                 
 <div id="searchbox"></div>
-                <article class="bd-article">
+                <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="id1">
-<h1>第4回：条件分岐（講義）<a class="headerlink" href="#id1" title="Link to this heading">#</a></h1>
+<h1>第4回：条件分岐（講義）<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <p>担当：古居彬</p>
 <section id="id2">
-<h2>内容<a class="headerlink" href="#id2" title="Link to this heading">#</a></h2>
+<h2>内容<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
 <p>第4回 条件分岐では，与えられた条件式に応じて処理を切り替える仕組みについて学ぶ．
 条件分岐を用いることで，例えばユーザの入力した内容に応じて処理を変えたり，プログラム内で計算した値に応じて細かい処理を切り替えることが可能になる．
 具体的には，以下の内容を身につけることを目指す．</p>
@@ -482,7 +472,7 @@ document.write(`
 </ul>
 </section>
 <section id="id3">
-<h2>条件分岐とは？<a class="headerlink" href="#id3" title="Link to this heading">#</a></h2>
+<h2>条件分岐とは？<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
 <p>日常生活において，何かしらの「条件」に基づき，もし〇〇ならXXする，そうでなければ△△するというような場面は多くあるだろう．</p>
 <p><img alt="" src="../../_images/if-image.png" /></p>
 <div class="admonition- admonition">
@@ -497,7 +487,7 @@ document.write(`
 このような条件分岐処理を行うためには，まず「もし〇〇なら〜」という条件の部分をプログラミング的に表現する必要がある．</p>
 </section>
 <section id="id4">
-<h2>真偽値と条件式<a class="headerlink" href="#id4" title="Link to this heading">#</a></h2>
+<h2>真偽値と条件式<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h2>
 <p><strong>真偽値（bool）</strong> とは，<strong>真</strong>（<code class="docutils literal notranslate"><span class="pre">True</span></code>）であるか <strong>偽</strong>（<code class="docutils literal notranslate"><span class="pre">False</span></code>）であるかの二値を取る型のことであり，<strong>条件</strong> が満たされているか？満たされてないか？を表す変数の型として用いられる（<strong>論理値</strong> とも呼ばれる）．
 この真偽値は，条件を分岐する上で非常に重要な概念となる．</p>
 <p>皆さんが中学・高校で勉強した値の比較から真偽値について確認しよう．
@@ -513,10 +503,10 @@ document.write(`
 </div>
 <p>このように，条件式とその結果（真偽値）によって条件分岐を制御する．</p>
 <section id="id5">
-<h3>代表的な比較演算子と条件式<a class="headerlink" href="#id5" title="Link to this heading">#</a></h3>
+<h3>代表的な比較演算子と条件式<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h3>
 <p>二つの変数に対する条件式を構成する演算子（<code class="docutils literal notranslate"><span class="pre">&lt;</span></code> や <code class="docutils literal notranslate"><span class="pre">&gt;</span></code> や <code class="docutils literal notranslate"><span class="pre">=</span></code>など）のことを <strong>比較演算子</strong> と呼ぶ．
 以下に，代表的な比較演算子を用いた条件式とその意味を示す．</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>条件式</p></th>
 <th class="head"><p>意味</p></th>
@@ -567,17 +557,16 @@ document.write(`
 </tr>
 </tbody>
 </table>
-</div>
 <div class="tip admonition">
 <p class="admonition-title">「等しい」の表し方</p>
-<p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> は等しい」を通常の数式で表現すると <span class="math notranslate nohighlight">\(x = y\)</span> だが，Pythonにおいて等号 <code class="docutils literal notranslate"><span class="pre">=</span></code> は「代入」の意味を持つので，条件式では使えない（詳しくは <a class="reference internal" href="../02/variables_and_data_types.html"><span class="std std-doc">前回</span></a> を参照）．
+<p>「<code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> は等しい」を通常の数式で表現すると <span class="math notranslate nohighlight">\(x = y\)</span> だが，Pythonにおいて等号 <code class="docutils literal notranslate"><span class="pre">=</span></code> は「代入」の意味を持つので，条件式では使えない（詳しくは <a class="reference internal" href="../02/variables_and_data_types.html"><span class="doc std std-doc">前回</span></a> を参照）．
 代わりに，等号を2つ続けた演算子 <code class="docutils literal notranslate"><span class="pre">==</span></code> を用いて <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">y</span></code> と書くことで，「<code class="docutils literal notranslate"><span class="pre">x</span></code> と <code class="docutils literal notranslate"><span class="pre">y</span></code> は等しい」という条件式を表現できる．</p>
 <p>この点は特に間違いやすいので，注意しよう．</p>
 </div>
 </section>
 </section>
 <section id="id6">
-<h2>数値の比較<a class="headerlink" href="#id6" title="Link to this heading">#</a></h2>
+<h2>数値の比較<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
 <p>いくつか条件式の練習をしてみよう．
 条件式が満たされているかどうか，またそれに応じて出力が <code class="docutils literal notranslate"><span class="pre">True</span></code> と <code class="docutils literal notranslate"><span class="pre">False</span></code> のどちらになるのか注意して実行してみて欲しい．</p>
 <div class="cell docutils container">
@@ -630,7 +619,7 @@ document.write(`
 </div>
 </section>
 <section id="id7">
-<h2>文字列の比較<a class="headerlink" href="#id7" title="Link to this heading">#</a></h2>
+<h2>文字列の比較<a class="headerlink" href="#id7" title="Permalink to this heading">#</a></h2>
 <p>数値だけでなく，文字列同時の比較も可能である．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -723,12 +712,12 @@ document.write(`
 </div>
 </section>
 <section id="in">
-<h2><code class="docutils literal notranslate"><span class="pre">in</span></code> 演算子<a class="headerlink" href="#in" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">in</span></code> 演算子<a class="headerlink" href="#in" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">in</span></code> という演算子を使うことで，リストや文字列など複数の要素が格納されたデータ型に対して，「ある要素が含まれているか？」という条件式を定義できる．
 より数式的に説明すると，<code class="docutils literal notranslate"><span class="pre">in</span></code> という演算子を使うことで，右辺に左辺の値が含まれているかどうかを判定することが可能である．
 例として，<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">in</span> <span class="pre">y</span></code> のように書くと，<code class="docutils literal notranslate"><span class="pre">x</span></code> が <code class="docutils literal notranslate"><span class="pre">y</span></code> に含まれていると <code class="docutils literal notranslate"><span class="pre">True</span></code>，含まれていないと <code class="docutils literal notranslate"><span class="pre">False</span></code> を返す条件式となる．</p>
 <section id="id8">
-<h3>基本的な使い方<a class="headerlink" href="#id8" title="Link to this heading">#</a></h3>
+<h3>基本的な使い方<a class="headerlink" href="#id8" title="Permalink to this heading">#</a></h3>
 <p>例えばリストの中に特定の値が含まれているかどうかを判定したい場合は，以下のように書けば良い．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -805,7 +794,7 @@ document.write(`
 </div>
 </section>
 <section id="id9">
-<h3>文字列に対する <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#id9" title="Link to this heading">#</a></h3>
+<h3>文字列に対する <code class="docutils literal notranslate"><span class="pre">in</span></code><a class="headerlink" href="#id9" title="Permalink to this heading">#</a></h3>
 <p>文字列に対しては，ある部分文字列が含まれているか？といった判定が可能である．</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -845,7 +834,7 @@ document.write(`
 </div>
 </section>
 <section id="not-in">
-<h3><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> による否定<a class="headerlink" href="#not-in" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> による否定<a class="headerlink" href="#not-in" title="Permalink to this heading">#</a></h3>
 <p><code class="docutils literal notranslate"><span class="pre">in</span></code> 演算子の否定には，<code class="docutils literal notranslate"><span class="pre">not</span> <span class="pre">in</span></code> を用いる．
 つまり，<code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">not</span> <span class="pre">in</span> <span class="pre">y</span></code> と書くと，<code class="docutils literal notranslate"><span class="pre">y</span></code> に <code class="docutils literal notranslate"><span class="pre">x</span></code> が含まれていない場合に <code class="docutils literal notranslate"><span class="pre">True</span></code> となる．</p>
 <div class="cell docutils container">
@@ -875,7 +864,7 @@ document.write(`
 </section>
 </section>
 <section id="id10">
-<h2>インデント構文<a class="headerlink" href="#id10" title="Link to this heading">#</a></h2>
+<h2>インデント構文<a class="headerlink" href="#id10" title="Permalink to this heading">#</a></h2>
 <p>条件式を用いた分岐処理（条件分岐）について説明する前に，Pythonのインデント（行頭の空白，字下げ）について説明する．</p>
 <p>これまで書いてきたプログラムは，ほとんどが1行で書けるような短い「文」だったが，実際には複数行にわたる「文」で構成される．
 基本的には，記述した順番に上から一文ずつ実行されていくが，いくつかの文の「グループ」を作成することで，条件分岐のような特殊な処理ができるようになる．
@@ -918,7 +907,7 @@ document.write(`
 インデント構文は条件分岐以外でも様々用いられるので，今後の講義の中で一つ一つ身につけていこう．</p>
 </div>
 <section id="id11">
-<h3>インデントの作成方法<a class="headerlink" href="#id11" title="Link to this heading">#</a></h3>
+<h3>インデントの作成方法<a class="headerlink" href="#id11" title="Permalink to this heading">#</a></h3>
 <p>なお，Colaboratoryでは，コードセル中の行頭で「Tab」キーを入力すると自動的にインデントが挿入される．
 また，末尾にコロン（<code class="docutils literal notranslate"><span class="pre">:</span></code>）がある状態で「Enter」キーを押した場合でも同様にインデントの挿入が行われる．
 インデントを戻すときは「Shift + Tab」を押せばよい．</p>
@@ -943,7 +932,7 @@ document.write(`
 </section>
 </section>
 <section id="if">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> 文<a class="headerlink" href="#if" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">if</span></code> 文<a class="headerlink" href="#if" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">if</span></code> 文を用いると，「もし〇〇ならA」のような条件式を満たす（<code class="docutils literal notranslate"><span class="pre">True</span></code>）か満たさない（<code class="docutils literal notranslate"><span class="pre">False</span></code>）に応じて処理を分岐することができる．
 これを，<code class="docutils literal notranslate"><span class="pre">if</span></code> 文による <strong>条件分岐</strong> と呼ぶ．</p>
 <p><img alt="" src="../../_images/if.png" /></p>
@@ -978,7 +967,7 @@ document.write(`
 </div>
 </div>
 </div>
-<p>なお，上記のプリント文では f-string表記を利用した．詳しくは 第2回の<a class="reference internal" href="#../02/variables_and_data_types.html#print"><span class="xref myst">【発展】print文</span></a> を参照されたい．
+<p>なお，上記のプリント文では f-string表記を利用した．詳しくは 第2回の<span class="xref myst">【発展】print文</span> を参照されたい．
 以降，このf-string表記を利用してprint文を表記することが増えるので，注意しておこう．</p>
 <p>上記プログラムの <code class="docutils literal notranslate"><span class="pre">a</span></code> と <code class="docutils literal notranslate"><span class="pre">b</span></code> の値を色々変えてみて，出力がそれに応じて変化することを確認せよ．</p>
 <div class="admonition tip">
@@ -1000,14 +989,14 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">a</span><span class="si">}</span><span class="s1">と</span><span class="si">{</span><span class="n">b</span><span class="si">}</span><span class="s1">は等しいです．&#39;</span><span class="p">)</span> <span class="c1"># if文の後にインデントを入れ忘れている</span>
     <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block after &#39;if&#39; statement on line 3
+<span class="ne">IndentationError</span>: expected an indented block
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="if-else">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-else" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code>文<a class="headerlink" href="#if-else" title="Permalink to this heading">#</a></h2>
 <p>「もし〇〇ならA，そうでなければB」のような処理を行いたい場合，<code class="docutils literal notranslate"><span class="pre">else</span></code> を用いる．</p>
 <p><img alt="" src="../../_images/if_else.png" /></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件式</span><span class="p">:</span>
@@ -1041,7 +1030,7 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> と <code class="docutils literal notranslate"><span class="pre">b</span></code> の値を色々変えてみて，出力がそれに応じて変化することを確認せよ．</p>
 </section>
 <section id="if-elif-else">
-<h2><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">elif</span> <span class="pre">...</span> <span class="pre">else</span></code> 文<a class="headerlink" href="#if-elif-else" title="Link to this heading">#</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">elif</span> <span class="pre">...</span> <span class="pre">else</span></code> 文<a class="headerlink" href="#if-elif-else" title="Permalink to this heading">#</a></h2>
 <p>「もし〇〇ならA，そうでない場合で△△ならばB」のような処理を行いたい場合，<code class="docutils literal notranslate"><span class="pre">elif</span></code>（else if）を用いる．</p>
 <p><img alt="" src="../../_images/if_elif_else.png" /></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件式1</span><span class="p">:</span>
@@ -1082,9 +1071,9 @@ document.write(`
 <p><code class="docutils literal notranslate"><span class="pre">a</span></code> と <code class="docutils literal notranslate"><span class="pre">b</span></code> の値を色々変えてみて，出力がそれに応じて変化することを確認せよ．</p>
 </section>
 <section id="id12">
-<h2>複数の条件の組み合わせ<a class="headerlink" href="#id12" title="Link to this heading">#</a></h2>
+<h2>複数の条件の組み合わせ<a class="headerlink" href="#id12" title="Permalink to this heading">#</a></h2>
 <section id="id13">
-<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> 文の入れ子構造<a class="headerlink" href="#id13" title="Link to this heading">#</a></h3>
+<h3><code class="docutils literal notranslate"><span class="pre">if</span></code> 文の入れ子構造<a class="headerlink" href="#id13" title="Permalink to this heading">#</a></h3>
 <p>実現した条件分岐が複雑な場合，<code class="docutils literal notranslate"><span class="pre">if</span></code> 文の中にさらに <code class="docutils literal notranslate"><span class="pre">if</span></code> 文を記述して，<strong>入れ子</strong> 構造の条件分岐を作ることができる．
 このような場合，インデントは以下のようにさらに深くなる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件式1</span><span class="p">:</span>
@@ -1100,7 +1089,7 @@ document.write(`
 同様に，6行目の <code class="docutils literal notranslate"><span class="pre">処理3</span></code>　のブロックは， <code class="docutils literal notranslate"><span class="pre">条件式1</span></code>, <code class="docutils literal notranslate"><span class="pre">条件式2</span></code>, <code class="docutils literal notranslate"><span class="pre">条件式3</span></code> の全てが <code class="docutils literal notranslate"><span class="pre">True</span></code> の時のみ実行される．</p>
 <p>このように複数の条件が同時に成り立つ場合に処理を実行したい場合は，次に示す <code class="docutils literal notranslate"><span class="pre">and</span></code> や <code class="docutils literal notranslate"><span class="pre">or</span></code> といった <strong>論理演算子</strong> を使うこともできる．
 以下に，論理演算子の一覧を示す．</p>
-<div class="pst-scrollable-table-container"><table class="table">
+<table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>演算子</p></th>
 <th class="head"><p>役割</p></th>
@@ -1126,11 +1115,10 @@ document.write(`
 </tr>
 </tbody>
 </table>
-</div>
 <p>なお，<code class="docutils literal notranslate"><span class="pre">not</span></code> は複数条件の組み合わせではなく，「ある条件が満たされない」という条件式を記述するときに利用される．</p>
 </section>
 <section id="ab">
-<h3>条件式Aかつ条件式Bが成り立つなら<a class="headerlink" href="#ab" title="Link to this heading">#</a></h3>
+<h3>条件式Aかつ条件式Bが成り立つなら<a class="headerlink" href="#ab" title="Permalink to this heading">#</a></h3>
 <p>複数の条件が両方成り立った場合のみ処理を実行したい場合，<code class="docutils literal notranslate"><span class="pre">and</span></code> を用いて各条件式を結合して書くことができる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件式A</span> <span class="ow">and</span> <span class="n">条件式B</span><span class="p">:</span>
     <span class="n">処理</span>
@@ -1139,7 +1127,7 @@ document.write(`
 <p>上記の例だと，<code class="docutils literal notranslate"><span class="pre">条件式A</span></code> と <code class="docutils literal notranslate"><span class="pre">条件式B</span></code> の両方が <code class="docutils literal notranslate"><span class="pre">True</span></code> であった場合のみ処理が実行される．</p>
 </section>
 <section id="id14">
-<h3>条件式Aまたは条件式Bが成り立つなら<a class="headerlink" href="#id14" title="Link to this heading">#</a></h3>
+<h3>条件式Aまたは条件式Bが成り立つなら<a class="headerlink" href="#id14" title="Permalink to this heading">#</a></h3>
 <p>複数の条件のうち，いずれかが成り立った場合のみ処理を実行したい場合，<code class="docutils literal notranslate"><span class="pre">or</span></code> を用いて各条件式を結合して書くことができる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">条件式A</span> <span class="ow">or</span> <span class="n">条件式B</span><span class="p">:</span>
     <span class="n">処理</span>
@@ -1196,7 +1184,7 @@ document.write(`
 </section>
 <hr class="docutils" />
 <section id="id15">
-<h2>【発展】3項演算子<a class="headerlink" href="#id15" title="Link to this heading">#</a></h2>
+<h2>【発展】3項演算子<a class="headerlink" href="#id15" title="Permalink to this heading">#</a></h2>
 <p>Pythonでは，以下のように1行で <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">...</span> <span class="pre">else</span></code> 文を書くことができる．</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Trueの場合の処理</span> <span class="k">if</span> <span class="n">条件式</span> <span class="k">else</span> <span class="n">Falseの場合の処理</span>
 </pre></div>
@@ -1264,8 +1252,8 @@ document.write(`
               
               
               
-                <footer class="prev-next-footer d-print-none">
-                  
+                <footer class="prev-next-footer">
+                  <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../03/exercise_variables_and_data_types.html"
@@ -1293,7 +1281,6 @@ document.write(`
             
               
                 <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
 
   <div class="sidebar-secondary-item">
   <div class="page-toc tocsection onthispage">
@@ -1350,7 +1337,6 @@ By Hiroaki Aizawa & Akira Furui
   
   <div class="footer-item">
     
-
   <p class="copyright">
     
       © Copyright 2024 (CC BY 4.0).
@@ -1377,8 +1363,8 @@ By Hiroaki Aizawa & Akira Furui
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=ac02cc09edc035673794"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=ac02cc09edc035673794"></script>
 
   <footer class="bd-footer">
   </footer>
